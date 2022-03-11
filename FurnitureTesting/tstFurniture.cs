@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FurnitureClasses;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace FurnitureTesting
