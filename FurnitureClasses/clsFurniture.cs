@@ -25,7 +25,7 @@ namespace FurnitureClasses
         public bool Find(int FurnitureId)
         {
             // set the private data members to the test data value
-            mFurnitureId = 2;
+            mFurnitureId = 1;
             // always return true
             return true;
         }
