@@ -36,6 +36,21 @@ namespace FurnitureClasses
             }
         }
 
+        // Category public data member
+        public string Category
+        {
+            get
+            {
+                // this line of code sends data out of the property
+                return mCategory;
+            }
+            set
+            {
+                // this line of code allows data into the property
+                mCategory = value;
+            }
+        }
+
         public bool Find(int FurnitureId)
         {
             // set the private data members to the test data value
