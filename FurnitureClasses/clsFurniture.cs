@@ -22,10 +22,10 @@ namespace FurnitureClasses
             }
         }
 
-        public bool Find(int furnitureId)
+        public bool Find(int FurnitureId)
         {
             // set the private data members to the test data value
-            mFurnitureId = 1;
+            mFurnitureId = 2;
             // always return true
             return true;
         }
