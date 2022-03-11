@@ -6,6 +6,20 @@ namespace FurnitureClasses
     {
         // private data member for the furniture id
         private Int32 mFurnitureId;
+        // privat data member for category
+        private String mCategory;
+        // private data member for name
+        private String mName;
+        // private data member for wood type
+        private String mWoodType;
+        // private data member for colour
+        private String mColour;
+        // private data member for size
+        private Double mSize;
+        // private data member for number in stock
+        private Int32 mStockNo;
+        // private data member for price
+        private Double mPrice;
 
         // furniture id public data member
         public int FurnitureId
