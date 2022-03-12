@@ -22,7 +22,7 @@ namespace FurnitureClasses
         private Double mPrice;
 
         // furniture id public data member
-        public int FurnitureId
+        public Int32 FurnitureId
         {
             get
             {
@@ -37,7 +37,7 @@ namespace FurnitureClasses
         }
 
         // Category public data member
-        public string Category
+        public String Category
         {
             get
             {
@@ -48,6 +48,96 @@ namespace FurnitureClasses
             {
                 // this line of code allows data into the property
                 mCategory = value;
+            }
+        }
+
+        // name public data member
+        public String Name
+        {
+            get
+            {
+                // this line of code sends data out of the property
+                return mName;
+            }
+            set
+            {
+                // this line of code allows data into the property
+                mName = value;
+            }
+        }
+
+        // Wood type public data member
+        public string WoodType
+        {
+            get
+            {
+                // this line of code sends data out of the property
+                return mWoodType;
+            }
+            set
+            {
+                // this line of code allows data into the property
+                mWoodType = value;
+            }
+        }
+
+        // Colour public data member
+        public string Colour
+        {
+            get
+            {
+                // this line of code sends data out of the property
+                return mColour;
+            }
+            set
+            {
+                // this line of code allows data into the property
+                mColour = value;
+            }
+        }
+
+        // Size public data member
+        public Double Size
+        {
+            get
+            {
+                // this line of code sends data out of the property
+                return mSize;
+            }
+            set
+            {
+                // this line of code allows data into the property
+                mSize = value;
+            }
+        }
+
+        // Number of stock public data member
+        public Int32 StockNo
+        {
+            get
+            {
+                // this line of code sends data out of the property
+                return mStockNo;
+            }
+            set
+            {
+                // this line of code allows data into the property
+                mStockNo = value;
+            }
+        }
+
+        // Price public data member
+        public Double Price
+        {
+            get
+            {
+                // this line of code sends data out of the property
+                return mPrice;
+            }
+            set
+            {
+                // this line of code allows data into the property
+                mPrice = value;
             }
         }
 
