@@ -7,6 +7,16 @@ namespace FurnitureTesting
     [TestClass]
     public class tstFurniture
     {
+        // test method to check if instance of class is null
+        [TestMethod]
+        public void InstanceOK()
+        {
+            // create an instance of the class
+            clsFurniture afurniture = new clsFurniture();
+            // test if an error message returned
+            Assert.IsNotNull(afurniture);
+        }
+
         [TestMethod]
         // test to check that the FindMethod() works
         public void FindMethodOk()
