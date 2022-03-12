@@ -69,6 +69,19 @@ namespace FurnitureTesting
             Assert.AreEqual(TestData, afurniture.Colour);
         }
 
+        // test method to check if size is equal to test data
+        [TestMethod]
+        public void SizeOK()
+        {
+            // create an instance of the class
+            clsFurniture afurniture = new clsFurniture();
+            // create some test data to test the method
+            Double TestData;
+            TestData = 13.5;
+            afurniture.Size = TestData;
+            Assert.AreEqual(TestData, afurniture.Size);
+        }
+
 
         [TestMethod]
         // test to check that the FindMethod() works
