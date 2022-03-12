@@ -95,6 +95,19 @@ namespace FurnitureTesting
             Assert.AreEqual(TestData, afurniture.StockNo);
         }
 
+        // test method to check if price is equal to test data
+        [TestMethod]
+        public void PriceOK()
+        {
+            // create an instance of the class
+            clsFurniture afurniture = new clsFurniture();
+            // create some test data to test the method
+            double Testdata;
+            Testdata = 30.0;
+            afurniture.Price = Testdata;
+            Assert.AreEqual(Testdata, afurniture.Price);
+        }
+
 
         [TestMethod]
         // test to check that the FindMethod() works
