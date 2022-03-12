@@ -82,6 +82,19 @@ namespace FurnitureTesting
             Assert.AreEqual(TestData, afurniture.Size);
         }
 
+        // test method to check if stock number is equal to test data
+        [TestMethod]
+        public void StockNoOK()
+        {
+            // create an instance of the class
+            clsFurniture afurniture = new clsFurniture();
+            // create some test data to test the method
+            Int32 TestData;
+            TestData = 8;
+            afurniture.StockNo = TestData;
+            Assert.AreEqual(TestData, afurniture.StockNo);
+        }
+
 
         [TestMethod]
         // test to check that the FindMethod() works
