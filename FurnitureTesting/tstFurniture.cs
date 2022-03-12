@@ -17,6 +17,19 @@ namespace FurnitureTesting
             Assert.IsNotNull(afurniture);
         }
 
+        // test method to check if category name is equal to test data
+        [TestMethod]
+        public void CategoryOK()
+        {
+            // create an instance of the class
+            clsFurniture afurniture = new clsFurniture();
+            // create some test data to test the method
+            string TestData;
+            TestData = "chair";
+            afurniture.Category = TestData;
+            Assert.AreEqual(TestData, afurniture.Category);
+        }
+
         [TestMethod]
         // test to check that the FindMethod() works
         public void FindMethodOk()
