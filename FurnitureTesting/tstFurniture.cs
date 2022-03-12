@@ -17,19 +17,6 @@ namespace FurnitureTesting
             Assert.IsNotNull(afurniture);
         }
 
-        // test method to check if name is equal to test data
-        [TestMethod]
-        public void NameOK()
-        {
-            // create an instance of the class
-            clsFurniture afurniture = new clsFurniture();
-            // create some test data to test the method
-            string TestData;
-            TestData = "reclining chair 2000";
-            afurniture.Category = TestData;
-            Assert.AreEqual(TestData, afurniture.Category);
-        }
-
         // test method to check if category name is equal to test data
         [TestMethod]
         public void CategoryOK()
@@ -42,6 +29,33 @@ namespace FurnitureTesting
             afurniture.Category = TestData;
             Assert.AreEqual(TestData, afurniture.Category);
         }
+
+        // test method to check if name is equal to test data
+        [TestMethod]
+        public void NameOK()
+        {
+            // create an instance of the class
+            clsFurniture afurniture = new clsFurniture();
+            // create some test data to test the method
+            string TestData;
+            TestData = "reclining chair 2000";
+            afurniture.Name = TestData;
+            Assert.AreEqual(TestData, afurniture.Name);
+        }
+
+        // test method to check if wood type is equal to test data
+        [TestMethod]
+        public void WoodTypeOK()
+        {
+            // create an instance of the class
+            clsFurniture afurniture = new clsFurniture();
+            // create some test data to test the method
+            string TestData;
+            TestData = "cinderwood";
+            afurniture.WoodType = TestData;
+            Assert.AreEqual(TestData, afurniture.WoodType);
+        }
+
 
         [TestMethod]
         // test to check that the FindMethod() works
