@@ -56,6 +56,19 @@ namespace FurnitureTesting
             Assert.AreEqual(TestData, afurniture.WoodType);
         }
 
+        // test method to check if colour is equal to test data
+        [TestMethod]
+        public void ColourOK()
+        {
+            // create an instance of the class
+            clsFurniture afurniture = new clsFurniture();
+            // create some test data to test the method
+            string TestData;
+            TestData = "Brown";
+            afurniture.Colour = TestData;
+            Assert.AreEqual(TestData, afurniture.Colour);
+        }
+
 
         [TestMethod]
         // test to check that the FindMethod() works
