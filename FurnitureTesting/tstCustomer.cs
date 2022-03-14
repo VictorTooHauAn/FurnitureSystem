@@ -189,6 +189,94 @@ namespace FurnitureTesting
             //test to see that the result is correct
             Assert.IsTrue(OK);
         }
+
+        [TestMethod]
+        public void TestLastNameFound()
+        {
+            //Create an instance of class
+            clsCustomer ACustomer = new clsCustomer();
+            //Bollean varaible to store the results of the validation
+            Boolean Found = false;
+            //boolean varaible to record if data is ok(assume it is)
+            Boolean OK = true;
+            //create some test data to use
+            string CustomerUserID = "P123";
+            //invoker the method
+            Found = ACustomer.Find(CustomerUserID);
+            //check the address no
+            if (ACustomer.Lastname != "Test Last Name")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestEmailFound()
+        {
+            //Create an instance of class
+            clsCustomer ACustomer = new clsCustomer();
+            //Bollean varaible to store the results of the validation
+            Boolean Found = false;
+            //boolean varaible to record if data is ok(assume it is)
+            Boolean OK = true;
+            //create some test data to use
+            string CustomerUserID = "P123";
+            //invoker the method
+            Found = ACustomer.Find(CustomerUserID);
+            //check the address no
+            if (ACustomer.Email != "Test Email")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestDateAdded()
+        {
+            //Create an instance of class
+            clsCustomer ACustomer = new clsCustomer();
+            //Bollean varaible to store the results of the validation
+            Boolean Found = false;
+            //boolean varaible to record if data is ok(assume it is)
+            Boolean OK = true;
+            //create some test data to use
+            string CustomerUserID = "P123";
+            //invoker the method
+            Found = ACustomer.Find(CustomerUserID);
+            //check the address no
+            if (ACustomer.DateAdded != Convert.ToDateTime("20/4/2000"))
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestPhone()
+        {
+            //Create an instance of class
+            clsCustomer ACustomer = new clsCustomer();
+            //Bollean varaible to store the results of the validation
+            Boolean Found = false;
+            //boolean varaible to record if data is ok(assume it is)
+            Boolean OK = true;
+            //create some test data to use
+            string CustomerUserID = "P123";
+            //invoker the method
+            Found = ACustomer.Find(CustomerUserID);
+            //check the address no
+            if (ACustomer.Phone != "Test Phone")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
     }
 }
 
