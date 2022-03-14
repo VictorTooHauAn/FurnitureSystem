@@ -34,7 +34,7 @@ namespace FurnitureTesting
             //Create an instance of class
             clsCustomer ACustomer = new clsCustomer();
             //Create some test data to assign to the property
-            string TestData = "123";
+            string TestData = "P123";
             //assign the data to the property
             ACustomer.CustomerUserID = TestData;
             //test to see that it exists
@@ -106,6 +106,88 @@ namespace FurnitureTesting
             ACustomer.Phone = TestData;
             //test to see that it exists
             Assert.AreEqual(ACustomer.Phone, TestData);
+        }
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //Create an instance of class
+            clsCustomer ACustomer = new clsCustomer();
+            //Bollean varaible to store the results of the validation
+            Boolean Found = false;
+            //Create some test data to use 
+            string CustomerUserID = "P123";
+            //invoker the method
+            Found = ACustomer.Find(CustomerUserID);
+            //test to see if the result is true
+            Assert.IsTrue(Found);
+        }
+
+
+        [TestMethod]
+        public void TestCustomerUserIDFound()
+        {
+            //Create an instance of class
+            clsCustomer ACustomer = new clsCustomer();
+            //Bollean varaible to store the results of the validation
+            Boolean Found = false;
+            //boolean varaible to record if data is ok(assume it is)
+            Boolean OK = true;
+            //create some test data to use
+            string CustomerUserID = "P123";
+            //invoker the method
+            Found = ACustomer.Find(CustomerUserID);
+            //check the address no
+            if (ACustomer.CustomerUserID != "P123")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestAddressFound()
+        {
+            //Create an instance of class
+            clsCustomer ACustomer = new clsCustomer();
+            //Bollean varaible to store the results of the validation
+            Boolean Found = false;
+            //boolean varaible to record if data is ok(assume it is)
+            Boolean OK = true;
+            //create some test data to use
+            string CustomerUserID = "P123";
+            //invoker the method
+            Found = ACustomer.Find(CustomerUserID);
+            //check the address no
+            if (ACustomer.Address != "Test Address")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestFirstNameFound()
+        {
+            //Create an instance of class
+            clsCustomer ACustomer = new clsCustomer();
+            //Bollean varaible to store the results of the validation
+            Boolean Found = false;
+            //boolean varaible to record if data is ok(assume it is)
+            Boolean OK = true;
+            //create some test data to use
+            string CustomerUserID = "P123";
+            //invoker the method
+            Found = ACustomer.Find(CustomerUserID);
+            //check the address no
+            if (ACustomer.Firstname != "Test First Name")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
         }
     }
 }
