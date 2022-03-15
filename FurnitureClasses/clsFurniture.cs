@@ -151,6 +151,7 @@ namespace FurnitureClasses
             mWoodType = "oak";
             mColour = "white";
             mSize = 12;
+            mStockNo = 7;
             // always return true
             return true;
         }
