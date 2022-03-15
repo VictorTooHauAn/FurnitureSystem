@@ -148,6 +148,7 @@ namespace FurnitureClasses
             mFurnitureId = 1;
             mCategory = "Premium wood";
             mName = "chair T-50";
+            mWoodType = "oak";
             // always return true
             return true;
         }

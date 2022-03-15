@@ -193,5 +193,28 @@ namespace FurnitureTesting
             // test to see if the result is true
             Assert.IsTrue(OK);
         }
+
+        [TestMethod]
+        // test to check that the FurnitureIdFound() works
+        public void WoodTypeFound()
+        {
+            // create an instance of the class we want to create
+            clsFurniture aFurniture = new clsFurniture();
+            // boolean variable to store the results of the validation
+            Boolean Found = false;
+            // boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method
+            Int32 FurnitureId = 1;
+            // invoke the method
+            Found = aFurniture.Find(FurnitureId);
+            // check the furniture id
+            if (aFurniture.WoodType != "oak")
+            {
+                OK = false;
+            }
+            // test to see if the result is true
+            Assert.IsTrue(OK);
+        }
     }
 }
