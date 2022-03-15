@@ -146,6 +146,7 @@ namespace FurnitureClasses
         {
             // set the private data members to the test data value
             mFurnitureId = 1;
+            mCategory = "Premium wood";
             // always return true
             return true;
         }
