@@ -152,6 +152,7 @@ namespace FurnitureClasses
             mColour = "white";
             mSize = 12;
             mStockNo = 7;
+            mPrice = 37.99;
             // always return true
             return true;
         }
