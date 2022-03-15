@@ -141,6 +141,7 @@ namespace FurnitureClasses
             }
         }
 
+        // public method to find a furniture id
         public bool Find(int FurnitureId)
         {
             // set the private data members to the test data value
