@@ -150,6 +150,7 @@ namespace FurnitureClasses
             mName = "chair T-50";
             mWoodType = "oak";
             mColour = "white";
+            mSize = 12;
             // always return true
             return true;
         }
