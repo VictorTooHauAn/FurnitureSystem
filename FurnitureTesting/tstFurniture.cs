@@ -163,7 +163,7 @@ namespace FurnitureTesting
             // invoke the method
             Found = aFurniture.Find(FurnitureId);
             // check the furniture id
-            if (aFurniture.Category != "Premium wood")
+            if (aFurniture.Category != "Living room")
             {
                 OK = false;
             }
@@ -186,7 +186,7 @@ namespace FurnitureTesting
             // invoke the method
             Found = aFurniture.Find(FurnitureId);
             // check the furniture id
-            if (aFurniture.Name != "chair T-50")
+            if (aFurniture.Name != "2-legged table")
             {
                 OK = false;
             }
@@ -209,7 +209,7 @@ namespace FurnitureTesting
             // invoke the method
             Found = aFurniture.Find(FurnitureId);
             // check the furniture id
-            if (aFurniture.WoodType != "oak")
+            if (aFurniture.WoodType != "Oak")
             {
                 OK = false;
             }
@@ -232,7 +232,7 @@ namespace FurnitureTesting
             // invoke the method
             Found = aFurniture.Find(FurnitureId);
             // check the furniture id
-            if (aFurniture.Colour != "white")
+            if (aFurniture.Colour != "Brown")
             {
                 OK = false;
             }
@@ -255,7 +255,7 @@ namespace FurnitureTesting
             // invoke the method
             Found = aFurniture.Find(FurnitureId);
             // check the furniture id
-            if (aFurniture.Size != 12)
+            if (aFurniture.Size != 3)
             {
                 OK = false;
             }
@@ -278,7 +278,7 @@ namespace FurnitureTesting
             // invoke the method
             Found = aFurniture.Find(FurnitureId);
             // check the furniture id
-            if (aFurniture.StockNo != 7)
+            if (aFurniture.StockNo != 5)
             {
                 OK = false;
             }
@@ -301,7 +301,7 @@ namespace FurnitureTesting
             // invoke the method
             Found = aFurniture.Find(FurnitureId);
             // check the furniture id
-            if (aFurniture.Price != 37.99)
+            if (aFurniture.Price != 13)
             {
                 OK = false;
             }
