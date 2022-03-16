@@ -162,18 +162,15 @@ namespace FurnitureClasses
                 mSize = Convert.ToDouble(DB.DataTable.Rows[0]["Size"]);
                 mStockNo = Convert.ToInt32(DB.DataTable.Rows[0]["StockNo"]);
                 mPrice = Convert.ToDouble(DB.DataTable.Rows[0]["Price"]);
+                // return that everything worked OK
+                return true;
             }
-            // set the private data members to the test data value
-            mFurnitureId = 1;
-            mCategory = "Premium wood";
-            mName = "chair T-50";
-            mWoodType = "oak";
-            mColour = "white";
-            mSize = 12;
-            mStockNo = 7;
-            mPrice = 37.99;
-            // always return true
-            return true;
+            // if no record was found
+            else
+            {
+                // return false indicating a problem
+                return false;
+            }
         }
     }
 }
