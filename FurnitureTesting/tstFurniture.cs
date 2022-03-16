@@ -126,7 +126,7 @@ namespace FurnitureTesting
         }
 
         [TestMethod]
-        // test to check that the FurnitureIdFound() works
+        // test to check that the find furnitur id method works
         public void FurnitureIdFound()
         {
             // create an instance of the class we want to create
@@ -141,6 +141,167 @@ namespace FurnitureTesting
             Found = aFurniture.Find(FurnitureId);
             // check the furniture id
             if (aFurniture.FurnitureId != 1)
+            {
+                OK = false;
+            }
+            // test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        // test to check that the find category method works
+        public void CategoryFound()
+        {
+            // create an instance of the class we want to create
+            clsFurniture aFurniture = new clsFurniture();
+            // boolean variable to store the results of the validation
+            Boolean Found = false;
+            // boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method
+            Int32 FurnitureId = 1;
+            // invoke the method
+            Found = aFurniture.Find(FurnitureId);
+            // check the furniture id
+            if (aFurniture.Category != "Premium wood")
+            {
+                OK = false;
+            }
+            // test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        // test to check that the find name method works
+        public void NameFound()
+        {
+            // create an instance of the class we want to create
+            clsFurniture aFurniture = new clsFurniture();
+            // boolean variable to store the results of the validation
+            Boolean Found = false;
+            // boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method
+            Int32 FurnitureId = 1;
+            // invoke the method
+            Found = aFurniture.Find(FurnitureId);
+            // check the furniture id
+            if (aFurniture.Name != "chair T-50")
+            {
+                OK = false;
+            }
+            // test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        // test to check that the find wood type method works
+        public void WoodTypeFound()
+        {
+            // create an instance of the class we want to create
+            clsFurniture aFurniture = new clsFurniture();
+            // boolean variable to store the results of the validation
+            Boolean Found = false;
+            // boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method
+            Int32 FurnitureId = 1;
+            // invoke the method
+            Found = aFurniture.Find(FurnitureId);
+            // check the furniture id
+            if (aFurniture.WoodType != "oak")
+            {
+                OK = false;
+            }
+            // test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        // test to check that the find colour method works
+        public void ColourFound()
+        {
+            // create an instance of the class we want to create
+            clsFurniture aFurniture = new clsFurniture();
+            // boolean variable to store the results of the validation
+            Boolean Found = false;
+            // boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method
+            Int32 FurnitureId = 1;
+            // invoke the method
+            Found = aFurniture.Find(FurnitureId);
+            // check the furniture id
+            if (aFurniture.Colour != "white")
+            {
+                OK = false;
+            }
+            // test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        // test to check that the find size method works
+        public void SizeFound()
+        {
+            // create an instance of the class we want to create
+            clsFurniture aFurniture = new clsFurniture();
+            // boolean variable to store the results of the validation
+            Boolean Found = false;
+            // boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method
+            Int32 FurnitureId = 1;
+            // invoke the method
+            Found = aFurniture.Find(FurnitureId);
+            // check the furniture id
+            if (aFurniture.Size != 12)
+            {
+                OK = false;
+            }
+            // test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        // test to check that the find amount in stock method works
+        public void StockNoFound()
+        {
+            // create an instance of the class we want to create
+            clsFurniture aFurniture = new clsFurniture();
+            // boolean variable to store the results of the validation
+            Boolean Found = false;
+            // boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method
+            Int32 FurnitureId = 1;
+            // invoke the method
+            Found = aFurniture.Find(FurnitureId);
+            // check the furniture id
+            if (aFurniture.StockNo != 7)
+            {
+                OK = false;
+            }
+            // test to see if the result is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        // test to check that the find price method works
+        public void PriceFound()
+        {
+            // create an instance of the class we want to create
+            clsFurniture aFurniture = new clsFurniture();
+            // boolean variable to store the results of the validation
+            Boolean Found = false;
+            // boolean variable to record if data is OK (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method
+            Int32 FurnitureId = 1;
+            // invoke the method
+            Found = aFurniture.Find(FurnitureId);
+            // check the furniture id
+            if (aFurniture.Price != 37.99)
             {
                 OK = false;
             }

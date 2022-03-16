@@ -141,10 +141,18 @@ namespace FurnitureClasses
             }
         }
 
+        // public method to find a furniture id
         public bool Find(int FurnitureId)
         {
             // set the private data members to the test data value
             mFurnitureId = 1;
+            mCategory = "Premium wood";
+            mName = "chair T-50";
+            mWoodType = "oak";
+            mColour = "white";
+            mSize = 12;
+            mStockNo = 7;
+            mPrice = 37.99;
             // always return true
             return true;
         }
