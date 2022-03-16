@@ -144,6 +144,25 @@ namespace FurnitureClasses
         // public method to find a furniture id
         public bool Find(int FurnitureId)
         {
+            // create a instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            // add the parameter for the furniture id to search for
+            DB.AddParameter("@FurnitureId", FurnitureId);
+            // execute the stored procedure
+            DB.Execute("sproc_tblFurniture_FilterByFurnitureId");
+            // if one record is found (there should be either one or zero!)
+            if (DB.Count == 1)
+            {
+                // copy the data from the database to the private data members
+                mFurnitureId = Convert.ToInt32(DB.DataTable.Rows[0]["FurnitureID"]);
+                mCategory = Convert.ToString(DB.DataTable.Rows[0]["Category"]);
+                mName = Convert.ToString(DB.DataTable.Rows[0]["Name"]);
+                mWoodType = Convert.ToString(DB.DataTable.Rows[0]["WoodType"]);
+                mColour = Convert.ToString(DB.DataTable.Rows[0]["Colour"]);
+                mSize = Convert.ToDouble(DB.DataTable.Rows[0]["Size"]);
+                mStockNo = Convert.ToInt32(DB.DataTable.Rows[0]["StockNo"]);
+                mPrice = Convert.ToDouble(DB.DataTable.Rows[0]["Price"]);
+            }
             // set the private data members to the test data value
             mFurnitureId = 1;
             mCategory = "Premium wood";
