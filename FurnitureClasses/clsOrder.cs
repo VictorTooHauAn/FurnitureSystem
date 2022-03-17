@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FurnitureClasses
 {
-    class Order
+    class clsOrder
     {
     }
 }
