@@ -69,7 +69,7 @@
   <ItemGroup>
     <Content Include="ACustomer.aspx" />
     <Content Include="CustomerViewer.aspx" />
-    <Content Include="findFurniture.aspx" />
+    <Content Include="FindFurniture.aspx" />
     <Content Include="Homepage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -88,12 +88,12 @@
     <Compile Include="CustomerViewer.aspx.designer.cs">
       <DependentUpon>CustomerViewer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="findFurniture.aspx.cs">
-      <DependentUpon>findFurniture.aspx</DependentUpon>
+    <Compile Include="FindFurniture.aspx.cs">
+      <DependentUpon>FindFurniture.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="findFurniture.aspx.designer.cs">
-      <DependentUpon>findFurniture.aspx</DependentUpon>
+    <Compile Include="FindFurniture.aspx.designer.cs">
+      <DependentUpon>FindFurniture.aspx</DependentUpon>
     </Compile>
     <Compile Include="Homepage.aspx.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>

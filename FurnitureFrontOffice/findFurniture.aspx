@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="findFurniture.aspx.cs" Inherits="FurnitureFrontOffice.findFurniture" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FindFurniture.aspx.cs" Inherits="FurnitureFrontOffice.findFurniture" %>
 
 <!DOCTYPE html>
 
