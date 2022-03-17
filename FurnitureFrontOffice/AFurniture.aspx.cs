@@ -10,9 +10,13 @@ namespace FurnitureFrontOffice
 {
     public partial class findFurniture : System.Web.UI.Page
     {
+        // error message
+        String error = "Item does not exist";
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // hide lblError
+            lblError.Visible = false;
         }
 
         protected void btnFind_Click(object sender, EventArgs e)
@@ -38,6 +42,22 @@ namespace FurnitureFrontOffice
                 txtSize.Text = AFurniture.Size.ToString();
                 txtStockNo.Text = AFurniture.StockNo.ToString();
                 txtPrice.Text = AFurniture.Price.ToString();
+            }
+            // if not found
+            else
+            {
+                // put the error message in the form
+                lblError.Text = error;
+                // show lblError
+                lblError.Visible = true;
+                // clear the form
+                txtCategory.Text = "";
+                txtName.Text = "";
+                txtWoodType.Text = "";
+                txtColour.Text = "";
+                txtSize.Text = "";
+                txtStockNo.Text = "";
+                txtPrice.Text = "";
             }
         }
     }

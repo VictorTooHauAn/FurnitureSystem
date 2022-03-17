@@ -12,9 +12,14 @@
             <asp:Label ID="lblFurnitureId" runat="server" Text="Code" Width="100px"></asp:Label>
             &nbsp;
             <asp:TextBox ID="txtFrnitureId" runat="server" Width="127px"></asp:TextBox>
-            <%--<br />--%>
             <asp:Button ID="btnFind" runat="server" Text="Find" OnClick="btnFind_Click" />
             <br />
+            <%-- show the error if a record was not found --%>
+            <% if (lblError.Visible == true)
+                {%>
+            <asp:Label ID="lblError" runat="server" Text="Error" ForeColor="Red"></asp:Label>
+            <br />
+            <%} %>
             <asp:Label ID="lblCategory" runat="server" Text="Category" Width="100px"></asp:Label>
             &nbsp;
             <asp:TextBox ID="txtCategory" runat="server" Width="127px"></asp:TextBox>
