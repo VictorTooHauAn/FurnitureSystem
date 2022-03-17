@@ -24,6 +24,33 @@ namespace FurnitureFrontOffice
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// lblFurnitureId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFurnitureId;
+
+        /// <summary>
+        /// txtFrnitureId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFrnitureId;
+
+        /// <summary>
+        /// btnFind control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFind;
+
+        /// <summary>
         /// lblCategory control.
         /// </summary>
         /// <remarks>
@@ -33,13 +60,13 @@ namespace FurnitureFrontOffice
         protected global::System.Web.UI.WebControls.Label lblCategory;
 
         /// <summary>
-        /// TextBox1 control.
+        /// txtCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtCategory;
 
         /// <summary>
         /// lblName control.
@@ -51,13 +78,13 @@ namespace FurnitureFrontOffice
         protected global::System.Web.UI.WebControls.Label lblName;
 
         /// <summary>
-        /// TextBox2 control.
+        /// txtName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txtName;
 
         /// <summary>
         /// lblWoodType control.
@@ -69,13 +96,13 @@ namespace FurnitureFrontOffice
         protected global::System.Web.UI.WebControls.Label lblWoodType;
 
         /// <summary>
-        /// TextBox3 control.
+        /// txtWoodType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox txtWoodType;
 
         /// <summary>
         /// lblColour control.
@@ -87,13 +114,13 @@ namespace FurnitureFrontOffice
         protected global::System.Web.UI.WebControls.Label lblColour;
 
         /// <summary>
-        /// TextBox4 control.
+        /// txtColour control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox txtColour;
 
         /// <summary>
         /// lblSize control.
@@ -105,13 +132,13 @@ namespace FurnitureFrontOffice
         protected global::System.Web.UI.WebControls.Label lblSize;
 
         /// <summary>
-        /// TextBox5 control.
+        /// txtSize control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox txtSize;
 
         /// <summary>
         /// lblStockNo control.
@@ -123,13 +150,13 @@ namespace FurnitureFrontOffice
         protected global::System.Web.UI.WebControls.Label lblStockNo;
 
         /// <summary>
-        /// TextBox6 control.
+        /// txtStockNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox txtStockNo;
 
         /// <summary>
         /// lblPrice control.
@@ -141,21 +168,12 @@ namespace FurnitureFrontOffice
         protected global::System.Web.UI.WebControls.Label lblPrice;
 
         /// <summary>
-        /// TextBox7 control.
+        /// txtPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
-
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.TextBox txtPrice;
     }
 }
