@@ -172,5 +172,17 @@ namespace FurnitureClasses
                 return false;
             }
         }
+
+        // function for the oublic validation method
+        public string Valid(string category,
+                            string name,
+                            string woodType,
+                            string colour,
+                            double size,
+                            double stockNo,
+                            double price)
+        {
+
+        }
     }
 }
