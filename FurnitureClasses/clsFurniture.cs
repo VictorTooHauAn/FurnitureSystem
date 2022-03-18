@@ -190,6 +190,12 @@ namespace FurnitureClasses
                 // record the error
                 Error = Error + "The category may not be blank: ";
             }
+            // if the category is greater than 15 characters
+            if (category.Length > 15)
+            {
+                // record the error
+                Error = Error + "The category must be less than 15 characters";
+            }
             // return any error message
             return Error;
         }

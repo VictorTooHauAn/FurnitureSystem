@@ -360,7 +360,7 @@ namespace FurnitureTesting
             // string variable to store any error message
             String Error = "";
             // create some test data to pass to the method
-            string Category = "k"; // should trigger an error
+            string Category = "k"; // should should be ok
             // invoke the method
             Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
             // test to see that the result is correct
@@ -376,7 +376,7 @@ namespace FurnitureTesting
             // string variable to store any error message
             String Error = "";
             // create some test data to pass to the method
-            string Category = "ko"; // should trigger an error
+            string Category = "ko"; // should should be ok
             // invoke the method
             Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
             // test to see that the result is correct
@@ -392,9 +392,9 @@ namespace FurnitureTesting
             // string variable to store any error message
             String Error = "";
             // create some test data to pass to the method
-            string Category = "ko"; // should trigger an error
-            // add characters till it reaches the 14
-            Category = Category.PadRight(12, 'o');
+            string Category = "ko"; // should should be ok
+            // add characters to the variable
+            Category = Category.PadRight(14, 'o');
             // invoke the method
             Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
             // test to see that the result is correct
@@ -410,9 +410,9 @@ namespace FurnitureTesting
             // string variable to store any error message
             String Error = "";
             // create some test data to pass to the method
-            string Category = "ko"; // should trigger an error
-            // add characters till it reaches the 14
-            Category = Category.PadRight(13, 'o');
+            string Category = "ko"; // should be ok
+            // add characters to the variable
+            Category = Category.PadRight(15, 'o');
             // invoke the method
             Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
             // test to see that the result is correct
@@ -428,13 +428,31 @@ namespace FurnitureTesting
             // string variable to store any error message
             String Error = "";
             // create some test data to pass to the method
-            string Category = "ko"; // should trigger an error
-            // add characters till it reaches the 14
-            Category = Category.PadRight(5, 'o');
+            string Category = "ko"; // should be ok
+            // add characters to the variable
+            Category = Category.PadRight(7, 'o');
             // invoke the method
             Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
             // test to see that the result is correct
             Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test for category plus one
+        public void CategoryMaxPlusOne()
+        {
+            // create an instance of the class we want to create
+            clsFurniture AFurniture = new clsFurniture();
+            // string variable to store any error message
+            String Error = "";
+            // create some test data to pass to the method
+            string Category = "ko";
+            // add characters till it reaches the 14
+            Category = Category.PadRight(16, 'o');
+            // invoke the method
+            Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
         }
     }
 }
