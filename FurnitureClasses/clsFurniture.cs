@@ -173,7 +173,7 @@ namespace FurnitureClasses
             }
         }
 
-        // function for the oublic validation method
+        // function for the public validation method
         public string Valid(string category,
                             string name,
                             string woodType,

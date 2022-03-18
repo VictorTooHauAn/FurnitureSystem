@@ -7,6 +7,18 @@ namespace FurnitureTesting
     [TestClass]
     public class tstFurniture
     {
+
+        // good test data
+        // create some test data to pass to the method
+        string Category = "Desk";
+        string Name = "i-desk 123";
+        string WoodType = "Maple";
+        string Colour = "Red";
+        double Size = 14.2;
+        double StockNo = 20;
+        double Price = 23.99;
+
+
         // test method to check if instance of class is null
         [TestMethod]
         public void InstanceOK()
@@ -307,6 +319,20 @@ namespace FurnitureTesting
             }
             // test to see if the result is true
             Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        // validation test
+        public void ValideMethodOK()
+        {
+            // create an instance of the class we want to create
+            clsFurniture AFurniture = new clsFurniture();
+            // string variable to store any error message
+            String Error = "";
+            // invoke the method
+            Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
         }
     }
 }
