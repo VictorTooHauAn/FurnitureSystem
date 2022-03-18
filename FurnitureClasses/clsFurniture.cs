@@ -182,7 +182,16 @@ namespace FurnitureClasses
                             double stockNo,
                             double price)
         {
-            return "";
+            // create a string variable to store the error
+            String Error = "";
+            // if the Category is blank
+            if (category.Length == 0)
+            {
+                // record the error
+                Error = Error + "The category may not be blank: ";
+            }
+            // return any error message
+            return Error;
         }
     }
 }
