@@ -182,7 +182,7 @@ namespace FurnitureClasses
                             double stockNo,
                             double price)
         {
-
+            return "";
         }
     }
 }
