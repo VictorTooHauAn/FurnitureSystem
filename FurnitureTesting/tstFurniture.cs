@@ -570,7 +570,7 @@ namespace FurnitureTesting
             // create some test data to pass to the method
             string Name = "";
             // add characters to the variable
-            Name = Name.PadRight(7, 'o');
+            Name = Name.PadRight(7, 'p');
             // invoke the method
             Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
             // test to see that the result is correct
@@ -589,7 +589,7 @@ namespace FurnitureTesting
             // create some test data to pass to the method
             string Name = "";
             // add characters till it reaches the 14
-            Name = Name.PadRight(16, 'o');
+            Name = Name.PadRight(16, 'p');
             // invoke the method
             Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
             // test to see that the result is correct
@@ -608,12 +608,27 @@ namespace FurnitureTesting
             // create some test data to pass to the method
             string Name = "";
             // add characters till it reaches the 14
-            Name = Name.PadRight(100, 'o');
+            Name = Name.PadRight(100, 'p');
             // invoke the method
             Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
             // test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
 
+        [TestMethod]
+        // validation test for wood type min less one
+        public void WoodTypeMinLessOne()
+        {
+            // create an instance of the class we want to create
+            clsFurniture AFurniture = new clsFurniture();
+            // string variable to store any error message
+            String Error = "";
+            // create some test data to pass to the method
+            string WoodType = ""; // should trigger an error
+            // invoke the method
+            Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
     }
 }
