@@ -533,7 +533,7 @@ namespace FurnitureTesting
             // create some test data to pass to the method
             string Name = ""; // should should be ok
             // add characters to the variable
-            Name = Category.PadRight(14, 'p');
+            Name = Name.PadRight(14, 'p');
             // invoke the method
             Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
             // test to see that the result is correct
