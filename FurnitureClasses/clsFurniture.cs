@@ -202,6 +202,12 @@ namespace FurnitureClasses
                 // record the error
                 Error = Error + "The name may not be blank";
             }
+            // if the name is greater than 15 characters
+            if (name.Length > 15)
+            {
+                // record the error
+                Error = Error + "The name may not be less than 15 characters";
+            }
             // return any error message
             return Error;
         }

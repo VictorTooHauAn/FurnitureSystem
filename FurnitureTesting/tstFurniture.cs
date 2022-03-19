@@ -577,5 +577,24 @@ namespace FurnitureTesting
             Assert.AreEqual(Error, "");
         }
 
+
+        [TestMethod]
+        // validation test for name max plus one
+        public void NameMaxPlusOne()
+        {
+            // create an instance of the class we want to create
+            clsFurniture AFurniture = new clsFurniture();
+            // string variable to store any error message
+            String Error = "";
+            // create some test data to pass to the method
+            string Name = "";
+            // add characters till it reaches the 14
+            Name = Name.PadRight(16, 'o');
+            // invoke the method
+            Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
     }
 }
