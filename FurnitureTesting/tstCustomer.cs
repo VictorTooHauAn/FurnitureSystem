@@ -34,7 +34,7 @@ namespace FurnitureTesting
             //Create an instance of class
             clsCustomer ACustomer = new clsCustomer();
             //Create some test data to assign to the property
-            string TestData = "P123";
+            string TestData = "123";
             //assign the data to the property
             ACustomer.CustomerUserID = TestData;
             //test to see that it exists
@@ -76,9 +76,9 @@ namespace FurnitureTesting
             //Create some test data to assign to the property
             string TestData = "victortoo@gmail.com";
             //assign the data to the property
-            ACustomer.Email = TestData;
+            ACustomer.EmailAddress = TestData;
             //test to see that it exists
-            Assert.AreEqual(ACustomer.Email, TestData);
+            Assert.AreEqual(ACustomer.EmailAddress, TestData);
         }
 
         [TestMethod]
@@ -103,9 +103,9 @@ namespace FurnitureTesting
             //Create some test data to assign to the property
             string TestData = "+445435423453";
             //assign the data to the property
-            ACustomer.Phone = TestData;
+            ACustomer.PhoneNumber = TestData;
             //test to see that it exists
-            Assert.AreEqual(ACustomer.Phone, TestData);
+            Assert.AreEqual(ACustomer.PhoneNumber, TestData);
         }
 
         [TestMethod]
@@ -116,7 +116,7 @@ namespace FurnitureTesting
             //Bollean varaible to store the results of the validation
             Boolean Found = false;
             //Create some test data to use 
-            string CustomerUserID = "P123";
+            string CustomerUserID = "123";
             //invoker the method
             Found = ACustomer.Find(CustomerUserID);
             //test to see if the result is true
@@ -134,11 +134,11 @@ namespace FurnitureTesting
             //boolean varaible to record if data is ok(assume it is)
             Boolean OK = true;
             //create some test data to use
-            string CustomerUserID = "P123";
+            string CustomerUserID = "123";
             //invoker the method
             Found = ACustomer.Find(CustomerUserID);
             //check the address no
-            if (ACustomer.CustomerUserID != "P123")
+            if (ACustomer.CustomerUserID != "123")
             {
                 OK = false;
             }
@@ -156,11 +156,11 @@ namespace FurnitureTesting
             //boolean varaible to record if data is ok(assume it is)
             Boolean OK = true;
             //create some test data to use
-            string CustomerUserID = "P123";
+            string CustomerUserID = "123";
             //invoker the method
             Found = ACustomer.Find(CustomerUserID);
             //check the address no
-            if (ACustomer.Address != "Test Address")
+            if (ACustomer.Address != "Code")
             {
                 OK = false;
             }
@@ -178,11 +178,11 @@ namespace FurnitureTesting
             //boolean varaible to record if data is ok(assume it is)
             Boolean OK = true;
             //create some test data to use
-            string CustomerUserID = "P123";
+            string CustomerUserID = "123";
             //invoker the method
             Found = ACustomer.Find(CustomerUserID);
             //check the address no
-            if (ACustomer.Firstname != "Test First Name")
+            if (ACustomer.Firstname != "Victor")
             {
                 OK = false;
             }
@@ -200,11 +200,11 @@ namespace FurnitureTesting
             //boolean varaible to record if data is ok(assume it is)
             Boolean OK = true;
             //create some test data to use
-            string CustomerUserID = "P123";
+            string CustomerUserID = "123";
             //invoker the method
             Found = ACustomer.Find(CustomerUserID);
             //check the address no
-            if (ACustomer.Lastname != "Test Last Name")
+            if (ACustomer.Lastname != "Too")
             {
                 OK = false;
             }
@@ -222,11 +222,11 @@ namespace FurnitureTesting
             //boolean varaible to record if data is ok(assume it is)
             Boolean OK = true;
             //create some test data to use
-            string CustomerUserID = "P123";
+            string CustomerUserID = "123";
             //invoker the method
             Found = ACustomer.Find(CustomerUserID);
             //check the address no
-            if (ACustomer.Email != "Test Email")
+            if (ACustomer.EmailAddress != "victortoo@hotmail.com")
             {
                 OK = false;
             }
@@ -244,7 +244,7 @@ namespace FurnitureTesting
             //boolean varaible to record if data is ok(assume it is)
             Boolean OK = true;
             //create some test data to use
-            string CustomerUserID = "P123";
+            string CustomerUserID = "123";
             //invoker the method
             Found = ACustomer.Find(CustomerUserID);
             //check the address no
@@ -266,11 +266,11 @@ namespace FurnitureTesting
             //boolean varaible to record if data is ok(assume it is)
             Boolean OK = true;
             //create some test data to use
-            string CustomerUserID = "P123";
+            string CustomerUserID = "123";
             //invoker the method
             Found = ACustomer.Find(CustomerUserID);
             //check the address no
-            if (ACustomer.Phone != "Test Phone")
+            if (ACustomer.PhoneNumber != "+4412345678912")
             {
                 OK = false;
             }

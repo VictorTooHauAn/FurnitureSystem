@@ -9,9 +9,9 @@ namespace FurnitureClasses
         private string mAddress;
         private string mFirstName;
         private string mLastName;
-        private string mEmail;
+        private string mEmailAddress;
         private DateTime mDataAdded;
-        private string mPhone;
+        private string mPhoneNumber;
         public string Address
         {
             get
@@ -68,18 +68,18 @@ namespace FurnitureClasses
                 mLastName = value;
             }
         }
-        public string Email
+        public string EmailAddress
         {
             get
             {
                 //this line of code sends data out of the property
-                return mEmail;
+                return mEmailAddress;
             }
 
             set
             {
                 //this line of code allows data into the property
-                mEmail = value;
+                mEmailAddress = value;
             }
         }
         public DateTime DateAdded
@@ -96,33 +96,50 @@ namespace FurnitureClasses
                 mDataAdded = value;
             }
         }
-        public string Phone
+        public string PhoneNumber
         {
             get
             {
                 //this line of code sends data out of the property
-                return mPhone;
+                return mPhoneNumber;
             }
 
             set
             {
                 //this line of code allows data into the property
-                mPhone = value;
+                mPhoneNumber = value;
             }
         }
 
-        public bool Find(string customerUserID)
+        public bool Find(string CustomerUserID)
         {
-            //set the private data members to the test data value
-            mCustomerUserID = "P123";
-            mAddress = "Test Address";
-            mFirstName = "Test First Name";
-            mLastName = "Test Last Name";
-            mEmail = "Test Email";
-            mDataAdded = Convert.ToDateTime("20/4/2000");
-            mPhone = "Test Phone";
-            //always return true
-            return true;
+            // create a instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            // add the parameter for the furniture id to search for
+            DB.AddParameter("@CustomerUserID", CustomerUserID);
+            // execute the stored procedure
+            DB.Execute("sproc_Customer_FilterByCustomerUserID");
+            // if one record is found (there should be either one or zero!)
+            if (DB.Count == 1)
+            {
+                // copy the data from the database to the private data members
+                mCustomerUserID = Convert.ToString(DB.DataTable.Rows[0]["CustomerUserID"]);
+                mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+                mEmailAddress = Convert.ToString(DB.DataTable.Rows[0]["EmailAddress"]);
+                mDataAdded = Convert.ToDateTime(DB.DataTable.Rows[0]["DateOfBirth"]);
+                mAddress = Convert.ToString(DB.DataTable.Rows[0]["Address"]);
+                mPhoneNumber = Convert.ToString(DB.DataTable.Rows[0]["PhoneNumber"]);
+                // return that everything worked OK
+                return true;
+            }
+            // if no record was found
+            else
+            {
+                // return false indicating a problems
+                return false;
+            }
         }
+
     }
 }
