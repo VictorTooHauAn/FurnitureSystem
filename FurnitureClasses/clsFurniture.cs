@@ -173,16 +173,104 @@ namespace FurnitureClasses
             }
         }
 
-        // function for the oublic validation method
-        //public string Valid(string category,
-        //                    string name,
-        //                    string woodType,
-        //                    string colour,
-        //                    double size,
-        //                    double stockNo,
-        //                    double price)
-        //{
+        // function for the public validation method
+        public string Valid(string category,
+                            string name,
+                            string woodType,
+                            string colour,
+                            double size,
+                            int stockNo,
+                            double price)
+        {
+            // create a string variable to store the error
+            String Error = "";
+            // if the Category is blank
+            if (category.Length == 0)
+            {
+                // record the error
+                Error = Error + "The category may not be blank: ";
+            }
+            // if the category is greater than 15 characters
+            if (category.Length > 15)
+            {
+                // record the error
+                Error = Error + "The category must be less than 15 characters";
+            }
+            // if name is blank
+            if (name.Length == 0)
+            {
+                // record the error
+                Error = Error + "The name may not be blank";
+            }
+            // if the name is greater than 15 characters
+            if (name.Length > 15)
+            {
+                // record the error
+                Error = Error + "The name may not be less than 15 characters";
+            }
+            // if the wood type is blank
+            if (woodType.Length == 0)
+            {
+                // record the error
+                Error = Error + "The wood type may not be blank";
+            }
+            // if the wood type is greater than 15
+            if (woodType.Length > 15)
+            {
+                // record the error
+                Error = Error + "The name may not be less than 15 characters";
+            }
+            // if the colour is blank
+            if (colour.Length == 0)
+            {
+                // record the error
+                Error = Error + "The name may not be less than 15 characters";
+            }
+            // if the colour is greater than 15
+            if (colour.Length > 15)
+            {
+                // record the error
+                Error = Error + "The name may not be less than 15 characters";
+            }
+            // if the size is less than 0
+            if (size < 0)
+            {
+                // record the error
+                Error = Error + "The name may not be less than 15 characters";
+            }
+            // if the size is greater than 
+            if (size > 50)
+            {
+                // record the error
+                Error = Error + "The name may not be less than 15 characters";
+            }
+            // if the stock no is less than 1
+            if (stockNo < 1)
+            {
+                // record the error
+                Error = Error + "The name may not be less than 15 characters";
+            }
+            // if the stock no is greater than 200
+            if (stockNo > 200)
+            {
+                // record the error
+                Error = Error + "The name may not be less than 15 characters";
+            }
+            // if the stock no is less than 0
+            if (price < 0)
+            {
+                // record the error
+                Error = Error + "The name may not be less than 15 characters";
+            }
+            // if the stock no is greater than 3000001.00
+            if (price > 3000000.00)
+            {
+                // record the error
+                Error = Error + "The name may not be less than 15 characters";
+            }
 
-        //}
+            // return any error message
+            return Error;
+        }
     }
 }
