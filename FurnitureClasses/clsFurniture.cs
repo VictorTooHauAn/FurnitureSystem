@@ -256,6 +256,13 @@ namespace FurnitureClasses
                 // record the error
                 Error = Error + "The name may not be less than 15 characters";
             }
+            // if the stock no is less than 0
+            if (price < 0)
+            {
+                // record the error
+                Error = Error + "The name may not be less than 15 characters";
+            }
+
             // return any error message
             return Error;
         }
