@@ -179,7 +179,7 @@ namespace FurnitureClasses
                             string woodType,
                             string colour,
                             double size,
-                            double stockNo,
+                            int stockNo,
                             double price)
         {
             // create a string variable to store the error
@@ -240,6 +240,12 @@ namespace FurnitureClasses
             }
             // if the size is greater than 
             if (size > 50)
+            {
+                // record the error
+                Error = Error + "The name may not be less than 15 characters";
+            }
+            // if the stock no is less than 1
+            if (stockNo < 1)
             {
                 // record the error
                 Error = Error + "The name may not be less than 15 characters";
