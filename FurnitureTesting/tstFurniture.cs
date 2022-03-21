@@ -787,5 +787,21 @@ namespace FurnitureTesting
             // test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
+
+        [TestMethod]
+        // validation test for colour min plus one
+        public void ColourMinPlusOne()
+        {
+            // create an instance of the class we want to create
+            clsFurniture AFurniture = new clsFurniture();
+            // string variable to store any error message
+            String Error = "";
+            // create some test data to pass to the method
+            string Colour = "be";
+            // invoke the method
+            Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
     }
 }
