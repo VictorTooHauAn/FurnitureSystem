@@ -46,7 +46,14 @@
             <br />
             <asp:Label ID="lblPrice" runat="server" Text="Price" Width="100px"></asp:Label>
             &nbsp;
-            <asp:TextBox ID="txtPrice" runat="server" Width="127px"></asp:TextBox>
+            <asp:TextBox ID="txtPrice" runat="server" Width="127px"></asp:TextBox><br />
+            <br />
+            <asp:Label ID="LabelError" runat="server" ForeColor="Red"></asp:Label>
+            <br />
+            <br />
+            <asp:Button ID="btnOK" runat="server" Height="26px" Text="OK" Width="61px" OnClick="btnOK_Click" />
+            <asp:Button ID="btnCancel" runat="server" Style="z-index: 1;" Text="Cancel" Height="26px" Width="61px"  />
+        
         </div>
     </form>
 </body>
