@@ -220,6 +220,12 @@ namespace FurnitureClasses
                 // record the error
                 Error = Error + "The name may not be less than 15 characters";
             }
+            // if the colour is blank
+            if (colour.Length == 0)
+            {
+                // record the error
+                Error = Error + "The name may not be less than 15 characters";
+            }
             // return any error message
             return Error;
         }
