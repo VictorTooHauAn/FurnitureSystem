@@ -896,7 +896,7 @@ namespace FurnitureTesting
 
         [TestMethod]
         // validation test for size min less one
-        public void SizeLessOne()
+        public void SizeMinLessOne()
         {
             // create an instance of the class we want to create
             clsFurniture AFurniture = new clsFurniture();
@@ -908,6 +908,22 @@ namespace FurnitureTesting
             Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
             // test to see that the result is correct
             Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test for size min
+        public void SizeMin()
+        {
+            // create an instance of the class we want to create
+            clsFurniture AFurniture = new clsFurniture();
+            // string variable to store any error message
+            String Error = "";
+            // create some test data to pass to the method
+            double Size = 4;
+            // invoke the method
+            Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
         }
 
     }
