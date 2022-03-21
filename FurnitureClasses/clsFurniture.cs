@@ -214,6 +214,12 @@ namespace FurnitureClasses
                 // record the error
                 Error = Error + "The wood type may not be blank";
             }
+            // if the wood type is greater than 15
+            if (woodType.Length > 15)
+            {
+                // record the error
+                Error = Error + "The name may not be less than 15 characters";
+            }
             // return any error message
             return Error;
         }
