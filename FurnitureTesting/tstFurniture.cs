@@ -842,7 +842,7 @@ namespace FurnitureTesting
 
         [TestMethod]
         // validation test for colour mid
-        public void ColourMaid()
+        public void ColourMid()
         {
             // create an instance of the class we want to create
             clsFurniture AFurniture = new clsFurniture();
@@ -857,5 +857,24 @@ namespace FurnitureTesting
             // test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
+
+        [TestMethod]
+        // validation test for colour max plus one
+        public void ColourMaxPlusOne()
+        {
+            // create an instance of the class we want to create
+            clsFurniture AFurniture = new clsFurniture();
+            // string variable to store any error message
+            String Error = "";
+            // create some test data to pass to the method
+            string Colour = "";
+            // add characters till it reaches the 14
+            Colour = Colour.PadRight(16, 'b');
+            // invoke the method
+            Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
     }
 }
