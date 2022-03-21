@@ -1183,7 +1183,7 @@ namespace FurnitureTesting
         }
 
         [TestMethod]
-        // validation test for price max
+        // validation test for price max less one
         public void PriceMaxLessOne()
         {
             // create an instance of the class we want to create
@@ -1199,7 +1199,7 @@ namespace FurnitureTesting
         }
 
         [TestMethod]
-        // validation test for price max
+        // validation test for price mid
         public void PriceMid()
         {
             // create an instance of the class we want to create
@@ -1212,6 +1212,22 @@ namespace FurnitureTesting
             Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
             // test to see that the result is correct
             Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test for price max plus one
+        public void PriceMaxPlusOne()
+        {
+            // create an instance of the class we want to create
+            clsFurniture AFurniture = new clsFurniture();
+            // string variable to store any error message
+            String Error = "";
+            // create some test data to pass to the method
+            double Price = 3000001.00;
+            // invoke the method
+            Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
         }
     }
 }
