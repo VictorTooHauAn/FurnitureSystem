@@ -136,7 +136,7 @@ namespace FurnitureClasses
             // if no record was found
             else
             {
-                // return false indicating a problem
+                // return false indicating a problems
                 return false;
             }
         }
