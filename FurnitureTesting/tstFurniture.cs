@@ -903,7 +903,7 @@ namespace FurnitureTesting
             // string variable to store any error message
             String Error = "";
             // create some test data to pass to the method
-            double Size = -1.9;
+            double Size = -1.00;
             // invoke the method
             Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
             // test to see that the result is correct
@@ -919,7 +919,7 @@ namespace FurnitureTesting
             // string variable to store any error message
             String Error = "";
             // create some test data to pass to the method
-            double Size = 4;
+            double Size = 1.00;
             // invoke the method
             Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
             // test to see that the result is correct
@@ -935,7 +935,23 @@ namespace FurnitureTesting
             // string variable to store any error message
             String Error = "";
             // create some test data to pass to the method
-            double Size = 8.4;
+            double Size = 2.00;
+            // invoke the method
+            Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test for size mid
+        public void SizeMid()
+        {
+            // create an instance of the class we want to create
+            clsFurniture AFurniture = new clsFurniture();
+            // string variable to store any error message
+            String Error = "";
+            // create some test data to pass to the method
+            double Size = 25.00;
             // invoke the method
             Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
             // test to see that the result is correct
@@ -951,11 +967,27 @@ namespace FurnitureTesting
             // string variable to store any error message
             String Error = "";
             // create some test data to pass to the method
-            double Size = 3347382.99;
+            double Size = 50.00;
             // invoke the method
             Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
             // test to see that the result is correct
             Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test for size max plus one
+        public void SizeMaxPlusOne()
+        {
+            // create an instance of the class we want to create
+            clsFurniture AFurniture = new clsFurniture();
+            // string variable to store any error message
+            String Error = "";
+            // create some test data to pass to the method
+            double Size = 51.00;
+            // invoke the method
+            Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
         }
     }
 }
