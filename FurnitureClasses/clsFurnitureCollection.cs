@@ -61,10 +61,10 @@ namespace FurnitureClasses
                 AFurniture.Category = Convert.ToString(DB.DataTable.Rows[Index]["Category"]);
                 AFurniture.Name = Convert.ToString(DB.DataTable.Rows[Index]["Name"]);
                 AFurniture.WoodType = Convert.ToString(DB.DataTable.Rows[Index]["WoodType"]);
-                AFurniture.Colour = Convert.ToString(DB.DataTable.Rows[Index]["WoodType"]);
-                AFurniture.Size = Convert.ToDouble(DB.DataTable.Rows[Index]["WoodType"]);
-                AFurniture.StockNo = Convert.ToInt32(DB.DataTable.Rows[Index]["WoodType"]);
-                AFurniture.Price = Convert.ToDouble(DB.DataTable.Rows[Index]["WoodType"]);
+                AFurniture.Colour = Convert.ToString(DB.DataTable.Rows[Index]["Colour"]);
+                AFurniture.Size = Convert.ToDouble(DB.DataTable.Rows[Index]["Size"]);
+                AFurniture.StockNo = Convert.ToInt32(DB.DataTable.Rows[Index]["SrockNo"]);
+                AFurniture.Price = Convert.ToDouble(DB.DataTable.Rows[Index]["Price"]);
                 // add the record to the private data member
                 mFurnitureList.Add(AFurniture);
                 // points at the next record
