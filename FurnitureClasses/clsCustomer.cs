@@ -208,18 +208,26 @@ namespace FurnitureClasses
                 //record the error
                 Error = Error + "The Address must be less than 20 characters : ";
             }
-            //copy the dateOfBirth value to the DateTemp variable
-            DateTemp = Convert.ToDateTime(dateOfBirth);
-            if (DateTemp < DateTime.Now.Date)
+            try
             {
-                //record the error
-                Error = Error + "The date cannot be in the past : ";
+                //copy the dateOfBirth value to the DateTemp variable
+                DateTemp = Convert.ToDateTime(dateOfBirth);
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The date cannot be in the past : ";
+                }
+                //check to see if the data is greater than today date
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The data cannot be in the future";
+                }
             }
-            //check to see if the data is greater than today date
-            if(DateTemp > DateTime.Now.Date)
+            catch
             {
                 //record the error
-                Error = Error + "The data cannot be in the future";
+                Error = Error + "The data was not a valid date";
             }
             //return any error message
             return Error;

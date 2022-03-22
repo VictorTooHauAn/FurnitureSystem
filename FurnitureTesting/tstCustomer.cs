@@ -1062,6 +1062,22 @@ namespace FurnitureTesting
             // test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
+
+        [TestMethod]
+        // validation test
+        public void DateOfBirthInvalidData()
+        {
+            // create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            // string variable to store any error message
+            String Error = "";
+            //set the dataofBirth to a non date value
+            string DateOfBirth = "this is not a date!";
+            //invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
     }
 }
 
