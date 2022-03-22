@@ -9,5 +9,6 @@ namespace FurnitureClasses
     public class clsFurnitureCollection
     {
         public List<clsFurniture> FurnitureList { get; set; }
+        public int Count { get; set; }
     }
 }
