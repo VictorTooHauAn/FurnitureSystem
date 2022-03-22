@@ -146,6 +146,8 @@ namespace FurnitureClasses
         {
             //create a string variable to store the error
             string Error = "";
+            //create a temporary variable to store date values
+            DateTime DateTemp;
             //if the FirstName is blank
             if (firstName.Length == 0)
             {
@@ -205,6 +207,19 @@ namespace FurnitureClasses
             {
                 //record the error
                 Error = Error + "The Address must be less than 20 characters : ";
+            }
+            //copy the dateOfBirth value to the DateTemp variable
+            DateTemp = Convert.ToDateTime(dateOfBirth);
+            if (DateTemp < DateTime.Now.Date)
+            {
+                //record the error
+                Error = Error + "The date cannot be in the past : ";
+            }
+            //check to see if the data is greater than today date
+            if(DateTemp > DateTime.Now.Date)
+            {
+                //record the error
+                Error = Error + "The data cannot be in the future";
             }
             //return any error message
             return Error;
