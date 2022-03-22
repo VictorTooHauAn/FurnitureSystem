@@ -8,30 +8,34 @@ namespace FurnitureClasses
         //constructor for the class
         public clsCustomerCollection()
         {
-            //create the items of test data
-            clsCustomer TestItem = new clsCustomer();
-            //set its properties
-            TestItem.CustomerUserID = "12345";
-            TestItem.Firstname = "Peter";
-            TestItem.Lastname = "Lee";
-            TestItem.Address = "5, London";
-            TestItem.EmailAddress = "peter@gmail.com";
-            TestItem.PhoneNumber = "+4498765432123";
-            TestItem.DateAdded = DateTime.Now.Date;
-            //add the item to the test list
-            mCustomerList.Add(TestItem);
-            //re initialise the object for some new data
-            TestItem = new clsCustomer();
-            //set its properties
-            TestItem.CustomerUserID = "54321";
-            TestItem.Firstname = "Henry";
-            TestItem.Lastname = "Jas";
-            TestItem.Address = "53, Liverpool";
-            TestItem.EmailAddress = "henry@gmail.com";
-            TestItem.PhoneNumber = "+447123123123";
-            TestItem.DateAdded = DateTime.Now.Date;
-            //add the item to thes test list
-            mCustomerList.Add(TestItem);
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count
+            Int32 RecordCount = 0;
+            //object for data connection
+            clsDataConnection DB = new clsDataConnection();
+            //execute the stored procedure
+            DB.Execute("sproc_Customer_SelectAll");
+            //get the count of records
+            RecordCount = DB.Count;
+            //white there are records to process
+            while (Index < RecordCount)
+            {
+                //create a blank Customer
+                clsCustomer Acustomer = new clsCustomer();
+                //read in the fields from the current record
+                Acustomer.CustomerUserID = Convert.ToString(DB.DataTable.Rows[Index]["CustomerUserID"]);
+                Acustomer.Firstname = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
+                Acustomer.Lastname = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
+                Acustomer.Address = Convert.ToString(DB.DataTable.Rows[Index]["Address"]);
+                Acustomer.EmailAddress = Convert.ToString(DB.DataTable.Rows[Index]["EmailAddress"]);
+                Acustomer.PhoneNumber = Convert.ToString(DB.DataTable.Rows[Index]["PhoneNumber"]);
+                Acustomer.DateAdded = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateOfBirth"]);
+                //add the record to the private data mamber
+                mCustomerList.Add(Acustomer);
+                //point at the next record
+                Index++;
+            }         
         }
         //private data member for the list
         List<clsCustomer> mCustomerList = new List<clsCustomer>();

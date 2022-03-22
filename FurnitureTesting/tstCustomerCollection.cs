@@ -106,13 +106,13 @@ namespace FurnitureTesting
             Assert.AreEqual(AllCustomer.Count, TestList.Count);
         }
 
-        [TestMethod]
-        public void TwoRecordsPresent()
-        {
-            //create an instance of the class we want to create
-            clsCustomerCollection AllCustomer = new clsCustomerCollection();
-            //test to see that the two value are the same
-            Assert.AreEqual(AllCustomer.Count, 2);
-        }
-        }
+        //[TestMethod]
+        //public void TwoRecordsPresent()
+        //{
+        //    //create an instance of the class we want to create
+        //    clsCustomerCollection AllCustomer = new clsCustomerCollection();
+        //    //test to see that the two value are the same
+        //    Assert.AreEqual(AllCustomer.Count, 2);
+        //}
+    }
 }
