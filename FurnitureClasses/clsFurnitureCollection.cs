@@ -10,5 +10,6 @@ namespace FurnitureClasses
     {
         public List<clsFurniture> FurnitureList { get; set; }
         public int Count { get; set; }
+        public clsFurniture ThisFurniture { get; set; }
     }
 }
