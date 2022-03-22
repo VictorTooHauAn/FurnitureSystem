@@ -953,49 +953,49 @@ namespace FurnitureTesting
             Assert.AreNotEqual(Error, "");
         }
 
-        [TestMethod]
-        // validation test
-        public void DateOfBirthExtremeMin()
-        {
-            // create an instance of the class we want to create
-            clsCustomer ACustomer = new clsCustomer();
-            // string variable to store any error message
-            String Error = "";
-            //create a varaible to store the test date data
-            DateTime TestDate;
-            //set the data totodays date
-            TestDate = DateTime.Now.Date;
-            //change the data to whatever the date is less 100 years
-            TestDate = TestDate.AddYears(-100);
-            //convert the data variable to a string variable
-            string DateOfBirth = TestDate.ToString();
-            //invoke the method
-            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
-            // test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
-        }
+        //[TestMethod]
+        //// validation test
+        //public void DateOfBirthExtremeMin()
+        //{
+        //    // create an instance of the class we want to create
+        //    clsCustomer ACustomer = new clsCustomer();
+        //    // string variable to store any error message
+        //    String Error = "";
+        //    //create a varaible to store the test date data
+        //    DateTime TestDate;
+        //    //set the data totodays date
+        //    TestDate = DateTime.Now.Date;
+        //    //change the data to whatever the date is less 100 years
+        //    TestDate = TestDate.AddYears(-100);
+        //    //convert the data variable to a string variable
+        //    string DateOfBirth = TestDate.ToString();
+        //    //invoke the method
+        //    Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+        //    // test to see that the result is correct
+        //    Assert.AreNotEqual(Error, "");
+        //}
 
-        [TestMethod]
-        // validation test
-        public void DateofBirthMinLessOne()
-        {
-            // create an instance of the class we want to create
-            clsCustomer ACustomer = new clsCustomer();
-            // string variable to store any error message
-            String Error = "";
-            //create a varaible to store the test date data
-            DateTime TestDate;
-            //set the data totodays date
-            TestDate = DateTime.Now.Date;
-            //change the data to whatever the date is less 100 years
-            TestDate = TestDate.AddDays(-1);
-            //convert the data variable to a string variable
-            string DateOfBirth = TestDate.ToString();
-            //invoke the method
-            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
-            // test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
-        }
+        //[TestMethod]
+        //// validation test
+        //public void DateofBirthMinLessOne()
+        //{
+        //    // create an instance of the class we want to create
+        //    clsCustomer ACustomer = new clsCustomer();
+        //    // string variable to store any error message
+        //    String Error = "";
+        //    //create a varaible to store the test date data
+        //    DateTime TestDate;
+        //    //set the data totodays date
+        //    TestDate = DateTime.Now.Date;
+        //    //change the data to whatever the date is less 100 years
+        //    TestDate = TestDate.AddDays(-1);
+        //    //convert the data variable to a string variable
+        //    string DateOfBirth = TestDate.ToString();
+        //    //invoke the method
+        //    Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+        //    // test to see that the result is correct
+        //    Assert.AreNotEqual(Error, "");
+        //}
 
         [TestMethod]
         // validation test

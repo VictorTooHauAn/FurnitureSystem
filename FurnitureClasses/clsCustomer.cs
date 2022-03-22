@@ -188,35 +188,35 @@ namespace FurnitureClasses
             if (emailAddress.Length == 0)
             {
                 //record the error
-                Error = Error + "The Address may not be blank : ";
+                Error = Error + "The Email Address may not be blank : ";
             }
             //if the EmailAddress is greater than 25 characters
             if (emailAddress.Length > 25)
             {
                 //record the error
-                Error = Error + "The Address must be less than 25 characters : ";
+                Error = Error + "The Email Address must be less than 25 characters : ";
             }
             //if the PhoneNumber is blank
             if (phoneNumber.Length == 0)
             {
                 //record the error
-                Error = Error + "The Address may not be blank : ";
+                Error = Error + "The Phone Number may not be blank : ";
             }
             //if the PhoneNumber is greater than 20 characters
             if (phoneNumber.Length > 20)
             {
                 //record the error
-                Error = Error + "The Address must be less than 20 characters : ";
+                Error = Error + "The Phone Number must be less than 20 characters : ";
             }
             try
             {
                 //copy the dateOfBirth value to the DateTemp variable
                 DateTemp = Convert.ToDateTime(dateOfBirth);
-                if (DateTemp < DateTime.Now.Date)
-                {
-                    //record the error
-                    Error = Error + "The date cannot be in the past : ";
-                }
+                //if (DateTemp < DateTime.Now.Date)
+                //{
+                //    //record the error
+                //    Error = Error + "The date cannot be in the past : ";
+                //}
                 //check to see if the data is greater than today date
                 if (DateTemp > DateTime.Now.Date)
                 {
