@@ -44,19 +44,6 @@ namespace FurnitureTesting
         }
 
         [TestMethod]
-        public void CountPropertyOK()
-        {
-            // create an instance of clsFurnitureCollection
-            clsFurnitureCollection AllFurniture = new clsFurnitureCollection();
-            // create some test data to assign to the property
-            Int32 SomeCount = 2;
-            // assign the data to the property
-            AllFurniture.Count = SomeCount;
-            // test to see that the two values are the same
-            Assert.AreEqual(AllFurniture.Count, SomeCount);
-        }
-
-        [TestMethod]
         public void ThisFurniturePropertyOk()
         {
             // create an instance of clsFurnitureCollection
