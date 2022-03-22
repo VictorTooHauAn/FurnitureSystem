@@ -8,8 +8,34 @@ namespace FurnitureClasses
 {
     public class clsFurnitureCollection
     {
-        public List<clsFurniture> FurnitureList { get; set; }
-        public int Count { get; set; }
+        // private data member for the list
+        List<clsFurniture> mFurnitureList = new List<clsFurniture>();
+
+        // public property for the furniture list
+        public List<clsFurniture> FurnitureList
+        {
+            get
+            {
+                // return the private data
+                return mFurnitureList;
+            }
+            set
+            {
+                // set the private data
+                mFurnitureList = value;
+            }
+        }
+        public int Count
+        {
+            get
+            {
+                // return the count of the list
+                return mFurnitureList.Count;
+            }
+            set
+            {
+            }
+        }
         public clsFurniture ThisFurniture { get; set; }
     }
 }
