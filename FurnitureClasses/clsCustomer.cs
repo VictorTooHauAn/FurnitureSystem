@@ -156,7 +156,7 @@ namespace FurnitureClasses
             if (firstName.Length > 15)
             {
                 //record the error
-                Error = Error + "The First Name must be less than 6 characters : ";
+                Error = Error + "The First Name must be less than 15 characters : ";
             }
             //if the LastName is blank
             if (lastName.Length == 0)
@@ -168,7 +168,7 @@ namespace FurnitureClasses
             if (lastName.Length > 15)
             {
                 //record the error
-                Error = Error + "The Last Name must be less than 6 characters : ";
+                Error = Error + "The Last Name must be less than 15 characters : ";
             }
             //if the Address is blank
             if (address.Length == 0)
@@ -180,7 +180,7 @@ namespace FurnitureClasses
             if (address.Length > 25)
             {
                 //record the error
-                Error = Error + "The Address must be less than 6 characters : ";
+                Error = Error + "The Address must be less than 25 characters : ";
             }
             //if the EmailAddress is blank
             if (emailAddress.Length == 0)
@@ -192,7 +192,19 @@ namespace FurnitureClasses
             if (emailAddress.Length > 25)
             {
                 //record the error
-                Error = Error + "The Address must be less than 6 characters : ";
+                Error = Error + "The Address must be less than 25 characters : ";
+            }
+            //if the PhoneNumber is blank
+            if (phoneNumber.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Address may not be blank : ";
+            }
+            //if the PhoneNumber is greater than 20 characters
+            if (phoneNumber.Length > 20)
+            {
+                //record the error
+                Error = Error + "The Address must be less than 20 characters : ";
             }
             //return any error message
             return Error;
