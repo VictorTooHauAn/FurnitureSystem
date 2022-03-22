@@ -559,6 +559,264 @@ namespace FurnitureTesting
             // test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
+
+        [TestMethod]
+        // validation test
+        public void AddressMinLessOne()
+        {
+            // create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            // string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Address = "";
+            // invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test
+        public void AddressMin()
+        {
+            // create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            // string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Address = "a";
+            // invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test
+        public void AddressMinPlusOne()
+        {
+            // create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            // string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Address = "aa";
+            // invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test
+        public void AddressMaxLessOne()
+        {
+            // create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            // string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Address = "aaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test
+        public void AddressMax()
+        {
+            // create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            // string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Address = "aaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test
+        public void AddressMid()
+        {
+            // create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            // string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Address = "aaaaaaaaaaaa";
+            // invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test
+        public void AddressMaxPlusOne()
+        {
+            // create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            // string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Address = "aaaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test
+        public void AddressExtremeMax()
+        {
+            // create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            // string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string Address = "";
+            Address = Address.PadRight(500, 'a');
+            // invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test
+        public void EmailAddressMinLessOne()
+        {
+            // create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            // string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string EmailAddress = "";
+            // invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test
+        public void EmailAddressMin()
+        {
+            // create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            // string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string EmailAddress = "a";
+            // invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test
+        public void EmailAddressMinPlusOne()
+        {
+            // create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            // string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string EmailAddress = "aa";
+            // invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test
+        public void EmailAddressMaxLessOne()
+        {
+            // create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            // string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string EmailAddress = "aaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test
+        public void EmailAddressMax()
+        {
+            // create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            // string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string EmailAddress = "aaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test
+        public void EmailAddressMid()
+        {
+            // create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            // string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string EmailAddress = "aaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test
+        public void EmailAddressMaxPlusOne()
+        {
+            // create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            // string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string EmailAddress = "aaaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        // validation test
+        public void EmailAddressExtremeMax()
+        {
+            // create an instance of the class we want to create
+            clsCustomer ACustomer = new clsCustomer();
+            // string variable to store any error message
+            String Error = "";
+            //create some test data to pass to the method
+            string EmailAddress = "";
+            EmailAddress = EmailAddress.PadRight(500, 'a');
+            // invoke the method
+            Error = ACustomer.Valid(FirstName, LastName, Address, EmailAddress, PhoneNumber, DateOfBirth);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
     }
 }
 

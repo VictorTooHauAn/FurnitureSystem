@@ -164,11 +164,35 @@ namespace FurnitureClasses
                 //record the error
                 Error = Error + "The Last Name may not be blank : ";
             }
-            //if the FirstName is greater than 15 characters
+            //if the LastName is greater than 15 characters
             if (lastName.Length > 15)
             {
                 //record the error
                 Error = Error + "The Last Name must be less than 6 characters : ";
+            }
+            //if the Address is blank
+            if (address.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Address may not be blank : ";
+            }
+            //if the Address is greater than 25 characters
+            if (address.Length > 25)
+            {
+                //record the error
+                Error = Error + "The Address must be less than 6 characters : ";
+            }
+            //if the EmailAddress is blank
+            if (emailAddress.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Address may not be blank : ";
+            }
+            //if the EmailAddress is greater than 25 characters
+            if (emailAddress.Length > 25)
+            {
+                //record the error
+                Error = Error + "The Address must be less than 6 characters : ";
             }
             //return any error message
             return Error;
