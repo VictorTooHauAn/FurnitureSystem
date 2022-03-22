@@ -188,25 +188,25 @@ namespace FurnitureClasses
             if (emailAddress.Length == 0)
             {
                 //record the error
-                Error = Error + "The Address may not be blank : ";
+                Error = Error + "The Email Address may not be blank : ";
             }
             //if the EmailAddress is greater than 25 characters
             if (emailAddress.Length > 25)
             {
                 //record the error
-                Error = Error + "The Address must be less than 25 characters : ";
+                Error = Error + "The Email Address must be less than 25 characters : ";
             }
             //if the PhoneNumber is blank
             if (phoneNumber.Length == 0)
             {
                 //record the error
-                Error = Error + "The Address may not be blank : ";
+                Error = Error + "The Phone Number may not be blank : ";
             }
             //if the PhoneNumber is greater than 20 characters
             if (phoneNumber.Length > 20)
             {
                 //record the error
-                Error = Error + "The Address must be less than 20 characters : ";
+                Error = Error + "The Phone Number must be less than 20 characters : ";
             }
             try
             {
