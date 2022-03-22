@@ -41,32 +41,35 @@ namespace FurnitureClasses
         // constructor for the class
         public clsFurnitureCollection()
         {
-            // create the items of test data
-            clsFurniture TestItem = new clsFurniture();
-            // set its properties
-            TestItem.FurnitureId = 1;
-            TestItem.Category = "Lounge";
-            TestItem.Name = "chair";
-            TestItem.WoodType = "birchwood";
-            TestItem.Colour = "red";
-            TestItem.Size = 43.40;
-            TestItem.StockNo = 53;
-            TestItem.Price = 83.32;
-            // add the item to the test list
-            mFurnitureList.Add(TestItem);
-            // re initialise the object for some new data
-            TestItem = new clsFurniture();
-            // st its properties
-            TestItem.FurnitureId = 2;
-            TestItem.Category = "kitchen";
-            TestItem.Name = "table";
-            TestItem.WoodType = "cider";
-            TestItem.Colour = "white";
-            TestItem.Size = 30;
-            TestItem.StockNo = 94;
-            TestItem.Price = 94.99;
-            // add the item to the test list
-            mFurnitureList.Add(TestItem);
+            // var for the index
+            Int32 Index = 0;
+            // var to store the record count
+            Int32 RecordCount = 0;
+            // object for data connection
+            clsDataConnection DB = new clsDataConnection();
+            // execute the stored procedure
+            DB.Execute("sproc_tblFurniture_SelectAll");
+            // get the count of records
+            RecordCount = DB.Count;
+            // while there are records to process
+            while (Index < RecordCount)
+            {
+                // create a blank furniture
+                clsFurniture AFurniture = new clsFurniture();
+                // read in the fields from the current record
+                AFurniture.FurnitureId = Convert.ToInt32(DB.DataTable.Rows[Index]["FurnitureID"]);
+                AFurniture.Category = Convert.ToString(DB.DataTable.Rows[Index]["Category"]);
+                AFurniture.Name = Convert.ToString(DB.DataTable.Rows[Index]["Name"]);
+                AFurniture.WoodType = Convert.ToString(DB.DataTable.Rows[Index]["WoodType"]);
+                AFurniture.Colour = Convert.ToString(DB.DataTable.Rows[Index]["WoodType"]);
+                AFurniture.Size = Convert.ToDouble(DB.DataTable.Rows[Index]["WoodType"]);
+                AFurniture.StockNo = Convert.ToInt32(DB.DataTable.Rows[Index]["WoodType"]);
+                AFurniture.Price = Convert.ToDouble(DB.DataTable.Rows[Index]["WoodType"]);
+                // add the record to the private data member
+                mFurnitureList.Add(AFurniture);
+                // points at the next record
+                Index++;
+            }
         }
     }
 }
