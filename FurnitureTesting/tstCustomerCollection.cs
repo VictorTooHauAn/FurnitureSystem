@@ -77,5 +77,42 @@ namespace FurnitureTesting
             //test to see that the two values are the same
             Assert.AreEqual(AllCustomer.ThisCustomer, TestCustomer);
         }
-    }
+
+
+        [TestMethod]
+        public void ListAndCountOK()
+        {
+            //create an instance of the class we want to create
+            clsCustomerCollection AllCustomer = new clsCustomerCollection();
+            //create some test data to asssign to the property
+            //in this case the data needs to be a list of objects
+            List<clsCustomer> TestList = new List<clsCustomer>();
+            //add an item to the list
+            //create the item of test data
+            clsCustomer TestItem = new clsCustomer();
+            //set its properties
+            TestItem.CustomerUserID = "12345";
+            TestItem.Firstname = "Peter";
+            TestItem.Lastname = "Lee";
+            TestItem.Address = "5, London";
+            TestItem.EmailAddress = "peter@gmail.com";
+            TestItem.PhoneNumber = "+4498765432123";
+            TestItem.DateAdded = DateTime.Now.Date;
+            //add the item to the test list
+            TestList.Add(TestItem);
+            //asign the data to the property
+            AllCustomer.CustomerList = TestList;
+            //test to see that the two values are the same
+            Assert.AreEqual(AllCustomer.Count, TestList.Count);
+        }
+
+        [TestMethod]
+        public void TwoRecordsPresent()
+        {
+            //create an instance of the class we want to create
+            clsCustomerCollection AllCustomer = new clsCustomerCollection();
+            //test to see that the two value are the same
+            Assert.AreEqual(AllCustomer.Count, 2);
+        }
+        }
 }
