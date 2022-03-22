@@ -141,5 +141,41 @@ namespace FurnitureClasses
             }
         }
 
+        //function for the public validation method
+        public string Valid(string firstName, string lastName, string address, string emailAddress, string phoneNumber, string dateOfBirth)
+        {
+            //create a string variable to store the error
+            string Error = "";
+            //if the FirstName is blank
+            if (firstName.Length == 0)
+            {
+                //record the error
+                Error = Error + "The First Name may not be blank : ";
+            }
+            //if the FirstName is greater than 15 characters
+            if (firstName.Length > 15)
+            {
+                //record the error
+                Error = Error + "The First Name must be less than 6 characters : ";
+            }
+            //if the LastName is blank
+            if (lastName.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Last Name may not be blank : ";
+            }
+            //if the FirstName is greater than 15 characters
+            if (lastName.Length > 15)
+            {
+                //record the error
+                Error = Error + "The Last Name must be less than 6 characters : ";
+            }
+            //return any error message
+            return Error;
+        }
+
+       
+
+
     }
 }
