@@ -103,5 +103,14 @@ namespace FurnitureTesting
             // test to see that the two values are the same
             Assert.AreEqual(AllFurniture.Count, TestList.Count);
         }
+
+        [TestMethod]
+        public void TwoRecordsPresent()
+        {
+            // create an instance of clsFurnitureCollection
+            clsFurnitureCollection AllFurniture = new clsFurnitureCollection();
+            // test to see that the two values are the same
+            Assert.AreEqual(AllFurniture.Count, 2);
+        }
     }
 }
