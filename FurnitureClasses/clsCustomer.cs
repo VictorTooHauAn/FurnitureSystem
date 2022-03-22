@@ -212,11 +212,11 @@ namespace FurnitureClasses
             {
                 //copy the dateOfBirth value to the DateTemp variable
                 DateTemp = Convert.ToDateTime(dateOfBirth);
-                if (DateTemp < DateTime.Now.Date)
-                {
-                    //record the error
-                    Error = Error + "The date cannot be in the past : ";
-                }
+                //if (DateTemp < DateTime.Now.Date)
+                //{
+                //    //record the error
+                //    Error = Error + "The date cannot be in the past : ";
+                //}
                 //check to see if the data is greater than today date
                 if (DateTemp > DateTime.Now.Date)
                 {
