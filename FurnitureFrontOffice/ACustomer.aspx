@@ -10,6 +10,7 @@
     <form id="form1" runat="server">
         <div>
             Customer User ID:<asp:TextBox ID="txtCustomerUserID" runat="server" Width="158px"></asp:TextBox>
+            <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" Text="Find" />
             <br />
             First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtFirstName" runat="server"></asp:TextBox>
