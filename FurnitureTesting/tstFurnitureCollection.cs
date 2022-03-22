@@ -89,6 +89,7 @@ namespace FurnitureTesting
             // create the item of test data
             clsFurniture TestItem = new clsFurniture();
             // set its properties
+            TestItem.FurnitureId = 1;
             TestItem.Category = "Lounge";
             TestItem.Name = "chair";
             TestItem.WoodType = "birchwood";
