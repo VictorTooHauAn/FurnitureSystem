@@ -8,5 +8,6 @@ namespace FurnitureClasses
 {
     public class clsFurnitureCollection
     {
+        public List<clsFurniture> FurnitureList { get; set; }
     }
 }
