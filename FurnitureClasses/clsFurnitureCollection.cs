@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FurnitureClasses
 {
-    class clsFurnitureCollection
+    public class clsFurnitureCollection
     {
     }
 }
