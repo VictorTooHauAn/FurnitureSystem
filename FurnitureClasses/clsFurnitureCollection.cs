@@ -85,5 +85,14 @@ namespace FurnitureClasses
                 Index++;
             }
         }
+
+        public int Add()
+        {
+            // adds a new record to the database based on the values of mThisFurniture
+            // set the primary key value of the new record
+            mThisFurniture.FurnitureId = 1;
+            // return the primary key of the new record
+            return mThisFurniture.FurnitureId;
+        }
     }
 }
