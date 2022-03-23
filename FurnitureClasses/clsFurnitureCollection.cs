@@ -89,10 +89,18 @@ namespace FurnitureClasses
         public int Add()
         {
             // adds a new record to the database based on the values of mThisFurniture
-            // set the primary key value of the new record
-            mThisFurniture.FurnitureId = 1;
-            // return the primary key of the new record
-            return mThisFurniture.FurnitureId;
+            // connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            // set the parameters for the stored procedure
+            DB.AddParameter("@Category", mThisFurniture.Category);
+            DB.AddParameter("@Name", mThisFurniture.Name);
+            DB.AddParameter("@WoodType", mThisFurniture.WoodType);
+            DB.AddParameter("@Colour", mThisFurniture.Colour);
+            DB.AddParameter("@Size", mThisFurniture.Size);
+            DB.AddParameter("@StockNo", mThisFurniture.StockNo);
+            DB.AddParameter("@Price", mThisFurniture.Price);
+            // execute the query returning the primary key value
+            return DB.Execute("sproc_tblFurniture_Insert");
         }
     }
 }

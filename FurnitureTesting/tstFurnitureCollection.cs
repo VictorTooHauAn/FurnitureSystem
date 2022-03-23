@@ -100,9 +100,9 @@ namespace FurnitureTesting
             // create the item of test data
             clsFurniture TestItem = new clsFurniture();
             // var to store the primaery key
-            Int32 PrimarryKey = 0;
+            Int32 PrimaryKey = 0;
             // set its properties
-            TestItem.FurnitureId = 1;
+            TestItem.FurnitureId = 2;
             TestItem.Category = "Lounge";
             TestItem.Name = "chair";
             TestItem.WoodType = "birchwood";
@@ -113,11 +113,11 @@ namespace FurnitureTesting
             // set ThisFurniture to the test data
             AllFurniture.ThisFurniture = TestItem;
             // add the record
-            PrimarryKey = AllFurniture.Add();
+            PrimaryKey = AllFurniture.Add();
             // set the primary key of the test data
-            TestItem.FurnitureId = PrimarryKey;
+            TestItem.FurnitureId = PrimaryKey;
             // find the record
-            AllFurniture.ThisFurniture.Find(PrimarryKey);
+            AllFurniture.ThisFurniture.Find(PrimaryKey);
             // test to see that the two values are the same
             Assert.AreEqual(AllFurniture.ThisFurniture, TestItem);
         }
