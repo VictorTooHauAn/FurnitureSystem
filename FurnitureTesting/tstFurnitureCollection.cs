@@ -91,5 +91,35 @@ namespace FurnitureTesting
             // test to see that the two values are the same
             Assert.AreEqual(AllFurniture.Count, TestList.Count);
         }
+
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsFurnitureCollection AllFurniture = new clsFurnitureCollection();
+            // create the item of test data
+            clsFurniture TestItem = new clsFurniture();
+            // var to store the primaery key
+            Int32 PrimarryKey = 0;
+            // set its properties
+            TestItem.FurnitureId = 1;
+            TestItem.Category = "Lounge";
+            TestItem.Name = "chair";
+            TestItem.WoodType = "birchwood";
+            TestItem.Colour = "red";
+            TestItem.Size = 43.40;
+            TestItem.StockNo = 53;
+            TestItem.Price = 83.32;
+            // set ThisFurniture to the test data
+            AllFurniture.ThisFurniture = TestItem;
+            // add the record
+            PrimarryKey = AllFurniture.Add();
+            // set the primary key of the test data
+            TestItem.FurnitureId = PrimarryKey;
+            // find the record
+            AllFurniture.ThisFurniture.Find(PrimarryKey);
+            // test to see that the two values are the same
+            Assert.AreEqual(AllFurniture.ThisFurniture, TestItem);
+        }
     }
 }
