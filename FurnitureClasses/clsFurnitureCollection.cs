@@ -10,6 +10,8 @@ namespace FurnitureClasses
     {
         // private data member for the list
         List<clsFurniture> mFurnitureList = new List<clsFurniture>();
+        // private data member thisFurniture
+        clsFurniture mThisFurniture = new clsFurniture();
 
         // public property for the furniture list
         public List<clsFurniture> FurnitureList
@@ -36,7 +38,19 @@ namespace FurnitureClasses
             {
             }
         }
-        public clsFurniture ThisFurniture { get; set; }
+        public clsFurniture ThisFurniture
+        {
+            get
+            {
+                // return the private data
+                return mThisFurniture;
+            }
+            set
+            {
+                // set the private data
+                mThisFurniture = value;
+            }
+        }
 
         // constructor for the class
         public clsFurnitureCollection()
