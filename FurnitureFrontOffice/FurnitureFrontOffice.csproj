@@ -70,6 +70,7 @@
     <Content Include="ACustomer.aspx" />
     <Content Include="CustomerViewer.aspx" />
     <Content Include="AFurniture.aspx" />
+    <Content Include="FurnitureList.aspx" />
     <Content Include="Homepage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -94,6 +95,13 @@
     </Compile>
     <Compile Include="AFurniture.aspx.designer.cs">
       <DependentUpon>AFurniture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FurnitureList.aspx.cs">
+      <DependentUpon>FurnitureList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FurnitureList.aspx.designer.cs">
+      <DependentUpon>FurnitureList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Homepage.aspx.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
