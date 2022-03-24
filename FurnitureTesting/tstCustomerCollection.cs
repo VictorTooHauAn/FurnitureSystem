@@ -143,5 +143,38 @@ namespace FurnitureTesting
             //test to see that the two values are the same
             Assert.AreEqual(AllCustomer.ThisCustomer, TestItem);
         }
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsCustomerCollection AllCustomer = new clsCustomerCollection();
+            //create the item of test data
+            clsCustomer TestItem = new clsCustomer();
+            //var to store the primary key
+            string PrimaryKey = "";
+            //set its properties
+            TestItem.CustomerUserID = "1574851";
+            TestItem.Firstname = "Peter";
+            TestItem.Lastname = "Lee";
+            TestItem.Address = "5, London";
+            TestItem.EmailAddress = "peter@gmail.com";
+            TestItem.PhoneNumber = "+4498765432123";
+            TestItem.DateAdded = DateTime.Now.Date;
+            //set ThisCustomer to the test data
+            AllCustomer.ThisCustomer = TestItem;
+            //add the record
+            PrimaryKey = AllCustomer.Add();
+            //set the primary key of the test data
+            TestItem.CustomerUserID = PrimaryKey;
+            //find the record
+            AllCustomer.ThisCustomer.Find(PrimaryKey);
+            //delete the record
+            AllCustomer.Delete();
+            //now find the record
+            Boolean Found = AllCustomer.ThisCustomer.Find(PrimaryKey);
+            //test to see taht the record was not found
+            Assert.IsFalse(Found);
+        }
     }
 }

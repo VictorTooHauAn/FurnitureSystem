@@ -95,5 +95,16 @@ namespace FurnitureClasses
             DB.AddParameter("@PhoneNumber", mThisCustomer.PhoneNumber);
             return Convert.ToString(DB.Execute("sproc_Customer_Insert"));
         }
+
+        public void Delete()
+        {
+            //deletes the record pointed to by thisCustomer
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the paramerters for the stored procedure
+            DB.AddParameter("@CustomerUserID", mThisCustomer.CustomerUserID);
+            //execute the stored procedure
+            DB.Execute("sproc_Customer_Delete");
+        }
     }
 }
