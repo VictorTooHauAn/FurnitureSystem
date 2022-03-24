@@ -33,12 +33,20 @@ namespace FurnitureFrontOffice
             }
         }
 
-        protected void btnAdd_Click(object sender, EventArgs e)
-        {
-            //store -1 into the seesion object to indicate this is a new rcord
-            Session["CustomerUserId"] = -1;
-            //redirect to the data entry page
-            Response.Redirect("ACustomer.aspx");
-        }
+        //protected void btnAdd_Click(object sender, EventArgs e)
+        //{
+        //    //store -1 into the seesion object to indicate this is a new rcord
+        //    Session["CustomerUserId"] = -1;
+        //    //redirect to the data entry page
+        //    Response.Redirect("ACustomerAdd.aspx");
+        //}
+
+        protected void btnAdd_Click1(object sender, EventArgs e)      
+            {
+                //store -1 into the seesion object to indicate this is a new rcord
+                Session["CustomerUserId"] = -1;
+                //redirect to the data entry page
+                Response.Redirect("ACustomerAdd.aspx");
+            }       
     }
 }
