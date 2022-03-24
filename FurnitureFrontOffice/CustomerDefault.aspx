@@ -23,7 +23,7 @@
         <div>
             <asp:ListBox ID="lstCustomer" runat="server" Height="210px" Width="300px"></asp:ListBox>
             <br />
-            <asp:Button ID="btnAdd" runat="server" Height="36px" Text="Add" Width="69px" />
+            <asp:Button ID="btnAdd" runat="server" Height="36px" Text="Add" Width="69px" OnClick="btnAdd_Click1" />
             <asp:Button ID="btnDelete" runat="server" Height="36px" Text="Delete" Width="69px" />
             <asp:Button ID="btnUpdate" runat="server" Height="36px" Text="Update" Width="69px" />
             <p align="center" class="MsoNormal" style="text-align:center">

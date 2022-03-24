@@ -125,7 +125,7 @@ namespace FurnitureTesting
             //var to store the primary key
             string PrimaryKey = "";
             //set its properties
-            TestItem.CustomerUserID = "1238811";
+            TestItem.CustomerUserID = "1574851";
             TestItem.Firstname = "Peter";
             TestItem.Lastname = "Lee";
             TestItem.Address = "5, London";
