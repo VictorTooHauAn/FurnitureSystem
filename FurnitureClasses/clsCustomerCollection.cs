@@ -12,38 +12,18 @@ namespace FurnitureClasses
         //constructor for the class
         public clsCustomerCollection()
         {
-            //var for the index
-            Int32 Index = 0;
-            //var to store the record count
-            Int32 RecordCount = 0;
-            //object for data connection
+            //object for the data connection
             clsDataConnection DB = new clsDataConnection();
             //execute the stored procedure
             DB.Execute("sproc_Customer_SelectAll");
-            //get the count of records
-            RecordCount = DB.Count;
-            //white there are records to process
-            while (Index < RecordCount)
-            {
-                //create a blank Customer
-                clsCustomer Acustomer = new clsCustomer();
-                //read in the fields from the current record
-                Acustomer.CustomerUserID = Convert.ToString(DB.DataTable.Rows[Index]["CustomerUserID"]);
-                Acustomer.Firstname = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
-                Acustomer.Lastname = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
-                Acustomer.Address = Convert.ToString(DB.DataTable.Rows[Index]["Address"]);
-                Acustomer.EmailAddress = Convert.ToString(DB.DataTable.Rows[Index]["EmailAddress"]);
-                Acustomer.PhoneNumber = Convert.ToString(DB.DataTable.Rows[Index]["PhoneNumber"]);
-                Acustomer.DateAdded = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateOfBirth"]);
-                //add the record to the private data mamber
-                mCustomerList.Add(Acustomer);
-                //point at the next record
-                Index++;
-            }         
+            //populate the array list with the data table
+            PopulateArray(DB);
+            
         }
 
-        public List<clsCustomer> CustomerList 
-        { get
+        public List<clsCustomer> CustomerList
+        {
+            get
             {
                 //return the privare data
                 return mCustomerList;
@@ -52,7 +32,7 @@ namespace FurnitureClasses
             {
                 //set the private data
                 mCustomerList = value;
-            } 
+            }
         }
         public int Count
         {
@@ -105,6 +85,67 @@ namespace FurnitureClasses
             DB.AddParameter("@CustomerUserID", mThisCustomer.CustomerUserID);
             //execute the stored procedure
             DB.Execute("sproc_Customer_Delete");
+        }
+
+        public void ReportByFirstName(string FirstName)
+        {
+            //filters the records based on a full or partial post code
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //send the FirstName parameter to the database
+            DB.AddParameter("@FirstName", FirstName);
+            //execute the stored procedure
+            DB.Execute("sproc_Customer_FilterByFirstName");
+            //populate the array list with the data table
+            PopulateArray(DB);
+        }
+
+        //public void Update()
+        //{
+        //    //update an existing record based on the values of ThisCustomer
+        //    //connect to the database
+        //    clsDataConnection DB = new clsDataConnection();
+        //    //set the parameters for the stored procedure
+        //    DB.AddParameter("@CustomerUserID", mThisCustomer.CustomerUserID);
+        //    DB.AddParameter("@FirstName", mThisCustomer.Firstname);
+        //    DB.AddParameter("@LastName", mThisCustomer.Lastname);
+        //    DB.AddParameter("@EmailAddress", mThisCustomer.EmailAddress);
+        //    DB.AddParameter("@DateOfBirth", mThisCustomer.DateAdded);
+        //    DB.AddParameter("@Address", mThisCustomer.Address);
+        //    DB.AddParameter("@PhoneNumber", mThisCustomer.PhoneNumber);
+        //    //execute the stored procedure
+        //    DB.Execute("sproc_Customer_Update");
+        //}
+
+        void PopulateArray(clsDataConnection DB)
+        {
+            //populated the array list based on the data table in the parameter DB
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count
+            Int32 RecordCount;
+            //get the count of records
+            RecordCount = DB.Count;
+            //clear the private array list
+            mCustomerList = new List<clsCustomer>();
+            //white there are records to process
+            while (Index < RecordCount)
+            {
+                //create a blank Customer
+                clsCustomer Acustomer = new clsCustomer();
+                //read in the fields from the current record
+                Acustomer.CustomerUserID = Convert.ToString(DB.DataTable.Rows[Index]["CustomerUserID"]);
+                Acustomer.Firstname = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
+                Acustomer.Lastname = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
+                Acustomer.Address = Convert.ToString(DB.DataTable.Rows[Index]["Address"]);
+                Acustomer.EmailAddress = Convert.ToString(DB.DataTable.Rows[Index]["EmailAddress"]);
+                Acustomer.PhoneNumber = Convert.ToString(DB.DataTable.Rows[Index]["PhoneNumber"]);
+                Acustomer.DateAdded = Convert.ToDateTime(DB.DataTable.Rows[Index]["DateOfBirth"]);
+                //add the record to the private data mamber
+                mCustomerList.Add(Acustomer);
+                //point at the next record
+                Index++;
+            }
         }
     }
 }

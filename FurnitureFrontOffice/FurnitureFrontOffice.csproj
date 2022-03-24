@@ -69,6 +69,8 @@
   <ItemGroup>
     <Content Include="ACustomer.aspx" />
     <Content Include="ACustomerAdd.aspx" />
+    <Content Include="ACustomerDelete.aspx" />
+    <Content Include="ACustomerUpdate.aspx" />
     <Content Include="CustomerDefault.aspx" />
     <Content Include="CustomerViewer.aspx" />
     <Content Include="AFurniture.aspx" />
@@ -90,6 +92,20 @@
     </Compile>
     <Compile Include="ACustomerAdd.aspx.designer.cs">
       <DependentUpon>ACustomerAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ACustomerDelete.aspx.cs">
+      <DependentUpon>ACustomerDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ACustomerDelete.aspx.designer.cs">
+      <DependentUpon>ACustomerDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ACustomerUpdate.aspx.cs">
+      <DependentUpon>ACustomerUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ACustomerUpdate.aspx.designer.cs">
+      <DependentUpon>ACustomerUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerDefault.aspx.cs">
       <DependentUpon>CustomerDefault.aspx</DependentUpon>
