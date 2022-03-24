@@ -194,5 +194,60 @@ namespace FurnitureTesting
             // test to see ThisFurniture matches the test data
             Assert.AreEqual(AllFurniture.ThisFurniture, TestItem);
         }
+
+        [TestMethod]
+        public void ReportByCategory()
+        {
+            // create an instance of the class containing unfiltered results
+            clsFurnitureCollection AllFurniture = new clsFurnitureCollection();
+            // create an instance of the filtered data
+            clsFurnitureCollection FilteredFurintures = new clsFurnitureCollection();
+            // apply a blank string (should return all records)
+            FilteredFurintures.ReportByCategory("");
+            // test to see that the two values are the same
+            Assert.AreEqual(AllFurniture.Count, FilteredFurintures.Count);
+        }
+
+        [TestMethod]
+        public void ReportByCategoryNoneFound()
+        {
+            // create the instance of the filtered data
+            clsFurnitureCollection FilteredCategories = new clsFurnitureCollection();
+            // apply a category that doesn't exist
+            FilteredCategories.ReportByCategory("xxx xxx");
+            // test to see that there are no records
+            Assert.AreEqual(0, FilteredCategories.Count);
+        }
+
+        [TestMethod]
+        public void ReportByCategoryTestDataFound()
+        {
+            // create an instance of the filtered data
+            clsFurnitureCollection FilteredCategories = new clsFurnitureCollection();
+            // var to store outcome
+            Boolean OK = true;
+            // apply a category that doesn't exist
+            FilteredCategories.ReportByCategory("yyy yy");
+            // check that the coorect number of records are found
+            if (FilteredCategories.Count == 2)
+            {
+                // check that the first record is ID 36
+                if (FilteredCategories.FurnitureList[0].FurnitureId != 36)
+                {
+                    OK = false;
+                }
+                // check that the first record is ID 37
+                if (FilteredCategories.FurnitureList[1].FurnitureId != 37)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            // test to see that there are no records
+            Assert.IsTrue(OK);
+        }
     }
 }
