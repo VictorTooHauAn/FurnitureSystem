@@ -24,7 +24,7 @@
             <asp:Button ID="btnDisplayAll" runat="server" Height="26px" Style="z-index: 1; width: 119px" Text="Display All" />
             <br />
             <br />
-            <asp:Button ID="btnAdd" runat="server" Style="z-index: 1;" Text="Add" Height="26px" Width="55px" />
+            <asp:Button ID="btnAdd" runat="server" Style="z-index: 1;" Text="Add" Height="26px" Width="55px" OnClick="btnAdd_Click" />
             <asp:Button ID="btnEdit" runat="server" Style="z-index: 1;" Text="Edit" Height="26px" Width="55px" />
             <asp:Button ID="btnDelete" runat="server" Style="z-index: 1; right: 249px" Text="Delete" Height="26px" Width="55px" />
         </div>

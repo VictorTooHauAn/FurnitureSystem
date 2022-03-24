@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ACustomer.aspx" />
+    <Content Include="AddFurnitureConf.aspx" />
     <Content Include="CustomerViewer.aspx" />
     <Content Include="AFurniture.aspx" />
     <Content Include="FurnitureList.aspx" />
@@ -81,6 +82,13 @@
     </Compile>
     <Compile Include="ACustomer.aspx.designer.cs">
       <DependentUpon>ACustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddFurnitureConf.aspx.cs">
+      <DependentUpon>AddFurnitureConf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddFurnitureConf.aspx.designer.cs">
+      <DependentUpon>AddFurnitureConf.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerViewer.aspx.cs">
       <DependentUpon>CustomerViewer.aspx</DependentUpon>
