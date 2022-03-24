@@ -227,17 +227,17 @@ namespace FurnitureTesting
             // var to store outcome
             Boolean OK = true;
             // apply a category that doesn't exist
-            FilteredCategories.ReportByCategory("yyy yy");
+            FilteredCategories.ReportByCategory("Outdoors");
             // check that the coorect number of records are found
             if (FilteredCategories.Count == 2)
             {
                 // check that the first record is ID 36
-                if (FilteredCategories.FurnitureList[0].FurnitureId != 36)
+                if (FilteredCategories.FurnitureList[0].FurnitureId != 44)
                 {
                     OK = false;
                 }
                 // check that the first record is ID 37
-                if (FilteredCategories.FurnitureList[1].FurnitureId != 37)
+                if (FilteredCategories.FurnitureList[1].FurnitureId != 45)
                 {
                     OK = false;
                 }
