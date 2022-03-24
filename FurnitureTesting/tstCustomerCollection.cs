@@ -254,12 +254,12 @@ namespace FurnitureTesting
             if (FilteredCustomer.Count == 2)
             {
                 //check that the first record CustomerID is 9999
-                if (FilteredCustomer.CustomerList[0].CustomerUserID != "9999")
+                if (FilteredCustomer.CustomerList[0].CustomerUserID != "9998")
                 {
                     OK = false;
                 }
                 //check that the first record is CustomerID is 9998
-                if (FilteredCustomer.CustomerList[1].CustomerUserID != "9998")
+                if (FilteredCustomer.CustomerList[1].CustomerUserID != "9999")
                 {
                     OK = false;
                 }
