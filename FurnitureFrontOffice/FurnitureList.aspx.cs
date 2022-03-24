@@ -40,5 +40,27 @@ namespace FurnitureFrontOffice
             // redirect to the data entry page
             Response.Redirect("AFurniture.aspx");
         }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            // var to store the primary key value of the record to be deleted
+            Int32 FurnitureId;
+            // if a record has been seleted from the list
+            if (lstFurniture.SelectedIndex != -1)
+            {
+                // get the primary key value of the record to be deleted
+                FurnitureId = Convert.ToInt32(lstFurniture.SelectedValue);
+                // store the data in the session object
+                Session["FurnitureId"] = FurnitureId;
+                // redirect to the delete page
+                Response.Redirect("FurnitureDelete.aspx");
+            }
+            // if no record ha been selected
+            else
+            {
+                // display an error
+                lblError.Text = "Please select a record to delete from the list";
+            }
+        }
     }
 }

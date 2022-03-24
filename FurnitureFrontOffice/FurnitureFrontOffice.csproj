@@ -71,6 +71,8 @@
     <Content Include="AddFurnitureConf.aspx" />
     <Content Include="CustomerViewer.aspx" />
     <Content Include="AFurniture.aspx" />
+    <Content Include="FurnitureDelete.aspx" />
+    <Content Include="FurnitureHome.aspx" />
     <Content Include="FurnitureList.aspx" />
     <Content Include="Homepage.aspx" />
     <Content Include="Web.config" />
@@ -103,6 +105,20 @@
     </Compile>
     <Compile Include="AFurniture.aspx.designer.cs">
       <DependentUpon>AFurniture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FurnitureDelete.aspx.cs">
+      <DependentUpon>FurnitureDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FurnitureDelete.aspx.designer.cs">
+      <DependentUpon>FurnitureDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FurnitureHome.aspx.cs">
+      <DependentUpon>FurnitureHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FurnitureHome.aspx.designer.cs">
+      <DependentUpon>FurnitureHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="FurnitureList.aspx.cs">
       <DependentUpon>FurnitureList.aspx</DependentUpon>

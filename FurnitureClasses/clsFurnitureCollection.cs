@@ -102,5 +102,16 @@ namespace FurnitureClasses
             // execute the query returning the primary key value
             return DB.Execute("sproc_tblFurniture_Insert");
         }
+
+        public void Delete()
+        {
+            // delete the record pointed to by ThisFurniture
+            // connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            // set the parameters for the stored procedure
+            DB.AddParameter("@FurnitureId", mThisFurniture.FurnitureId);
+            // execute the stored procedure
+            DB.Execute("sproc_tblFurniture_Delete");
+        }
     }
 }
