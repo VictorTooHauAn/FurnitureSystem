@@ -5,6 +5,10 @@ namespace FurnitureClasses
 {
     public class clsCustomerCollection
     {
+        //private data member for the list
+        List<clsCustomer> mCustomerList = new List<clsCustomer>();
+        //private data member thisCustomer
+        clsCustomer mThisCustomer = new clsCustomer();
         //constructor for the class
         public clsCustomerCollection()
         {
@@ -37,8 +41,7 @@ namespace FurnitureClasses
                 Index++;
             }         
         }
-        //private data member for the list
-        List<clsCustomer> mCustomerList = new List<clsCustomer>();
+
         public List<clsCustomer> CustomerList 
         { get
             {
@@ -63,8 +66,34 @@ namespace FurnitureClasses
                 //we shall worry about this later
             }
         }
-        public clsCustomer ThisCustomer { get; set; }
+        public clsCustomer ThisCustomer
+        {
+            get
+            {
+                //return the private data
+                return mThisCustomer;
+            }
+            set
+            {
+                //set the private data
+                mThisCustomer = value;
+            }
+        }
 
-      
+        public string Add()
+        {
+            //adds a new record to the database based on the values of mThisCustomer
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the stored procedure
+            DB.AddParameter("@CustomerUserID", mThisCustomer.CustomerUserID);
+            DB.AddParameter("@FirstName", mThisCustomer.Firstname);
+            DB.AddParameter("@LastName", mThisCustomer.Lastname);
+            DB.AddParameter("@EmailAddress", mThisCustomer.EmailAddress);
+            DB.AddParameter("@DateOfBirth", mThisCustomer.DateAdded);
+            DB.AddParameter("@Address", mThisCustomer.Address);
+            DB.AddParameter("@PhoneNumber", mThisCustomer.PhoneNumber);
+            return Convert.ToString(DB.Execute("sproc_Customer_Insert"));
+        }
     }
 }
