@@ -113,5 +113,23 @@ namespace FurnitureClasses
             // execute the stored procedure
             DB.Execute("sproc_tblFurniture_Delete");
         }
+
+        public void Update()
+        {
+            // update an existing record based on the values of ThisFurniture
+            // connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            // set the parameter for the stored procedure
+            DB.AddParameter("@FurnitureId", mThisFurniture.FurnitureId);
+            DB.AddParameter("@Category", mThisFurniture.Category);
+            DB.AddParameter("@Name", mThisFurniture.Name);
+            DB.AddParameter("@WoodType", mThisFurniture.WoodType);
+            DB.AddParameter("@Colour", mThisFurniture.Colour);
+            DB.AddParameter("@Size", mThisFurniture.Size);
+            DB.AddParameter("@StockNo", mThisFurniture.StockNo);
+            DB.AddParameter("@Price", mThisFurniture.Price);
+            //execute the stored procedure
+            DB.Execute("sproc_tblFurniture_Update");
+        }
     }
 }

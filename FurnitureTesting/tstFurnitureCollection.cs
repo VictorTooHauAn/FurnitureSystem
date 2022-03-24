@@ -132,7 +132,7 @@ namespace FurnitureTesting
             // var to store the primary key
             Int32 PrimaryKey = 0;
             // set its properties
-            TestItem.FurnitureId = 2;
+            //TestItem.FurnitureId = 2;
             TestItem.Category = "Lounge";
             TestItem.Name = "chair";
             TestItem.WoodType = "birchwood";
@@ -154,6 +154,45 @@ namespace FurnitureTesting
             Boolean Found = AllFurniture.ThisFurniture.Find(PrimaryKey);
             // test to see that the record was not found
             Assert.IsFalse(Found);
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            // create an instance of the class want to create
+            clsFurnitureCollection AllFurniture = new clsFurnitureCollection();
+            // create the item of test data
+            clsFurniture TestItem = new clsFurniture();
+            // var to store the primary key
+            Int32 PrimaryKey = 0;
+            // set its properties
+            TestItem.Category = "Lounge";
+            TestItem.Name = "chair";
+            TestItem.WoodType = "birchwood";
+            TestItem.Colour = "red";
+            TestItem.Size = 43.40;
+            TestItem.StockNo = 53;
+            TestItem.Price = 83.32;
+            // set ThisFurniture to the test data
+            AllFurniture.ThisFurniture = TestItem;
+            // add the record
+            PrimaryKey = AllFurniture.Add();
+            // set the primary key of the test data
+            TestItem.Category = "Kitchen";
+            TestItem.Name = "table";
+            TestItem.WoodType = "cider";
+            TestItem.Colour = "white";
+            TestItem.Size = 32.43;
+            TestItem.StockNo = 32;
+            TestItem.Price = 21.76;
+            // set the record based on the new test data
+            AllFurniture.ThisFurniture = TestItem;
+            // update the record
+            AllFurniture.Update();
+            // find the record
+            AllFurniture.ThisFurniture.Find(PrimaryKey);
+            // test to see ThisFurniture matches the test data
+            Assert.AreEqual(AllFurniture.ThisFurniture, TestItem);
         }
     }
 }

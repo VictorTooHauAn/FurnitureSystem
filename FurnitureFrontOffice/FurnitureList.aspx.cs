@@ -10,16 +10,24 @@ namespace FurnitureFrontOffice
 {
     public partial class FurnitureList : System.Web.UI.Page
     {
+        // variabel to store the primary key with  page level scope
+        Int32 FurnitureId;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(IsPostBack == false)
+            if (IsPostBack == false)
             {
-                // uodate teh list box
-                DisplayAddresses();
+                // get the number of the furniture to be processed
+                FurnitureId = Convert.ToInt32(Session["FurnitureId"]);
+                if (IsPostBack == false)
+                {
+                    // update the list box
+                    DisplayFurniture();
+                }
             }
         }
 
-        void DisplayAddresses()
+        void DisplayFurniture()
         {
             // create an instance of the furniture collection
             clsFurnitureCollection Furniture = new clsFurnitureCollection();
@@ -60,6 +68,29 @@ namespace FurnitureFrontOffice
             {
                 // display an error
                 lblError.Text = "Please select a record to delete from the list";
+            }
+        }
+
+        // event handler for the edit button
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            // var to store the primary key value of the record to be edited
+            Int32 FurnitureId;
+            // if a record has been selected from the list
+            if (lstFurniture.SelectedIndex != 1)
+            {
+                // get the primary key value of the record to edit
+                FurnitureId = Convert.ToInt32(lstFurniture.SelectedValue);
+                // store the data in the session object
+                Session["FurnitureId"] = FurnitureId;
+                // redirect to the edit page
+                Response.Redirect("FurnitureEdit.aspx");
+            }
+            // if no record has been selected
+            else
+            {
+                // display an error
+                lblError.Text = "Please select a record to edit from the list";
             }
         }
     }
