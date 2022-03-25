@@ -68,9 +68,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ACustomer.aspx" />
+    <Content Include="ACustomerAdd.aspx" />
+    <Content Include="ACustomerDelete.aspx" />
+    <Content Include="ACustomerUpdate.aspx" />
     <Content Include="AddFurnitureConf.aspx" />
     <Content Include="APayment.aspx" />
     <Content Include="APaymentAdd.aspx" />
+    <Content Include="CustomerDefault.aspx" />
     <Content Include="CustomerViewer.aspx" />
     <Content Include="AFurniture.aspx" />
     <Content Include="Default.aspx" />
@@ -89,6 +93,27 @@
     </Compile>
     <Compile Include="ACustomer.aspx.designer.cs">
       <DependentUpon>ACustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ACustomerAdd.aspx.cs">
+      <DependentUpon>ACustomerAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ACustomerAdd.aspx.designer.cs">
+      <DependentUpon>ACustomerAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ACustomerDelete.aspx.cs">
+      <DependentUpon>ACustomerDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ACustomerDelete.aspx.designer.cs">
+      <DependentUpon>ACustomerDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ACustomerUpdate.aspx.cs">
+      <DependentUpon>ACustomerUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ACustomerUpdate.aspx.designer.cs">
+      <DependentUpon>ACustomerUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddFurnitureConf.aspx.cs">
       <DependentUpon>AddFurnitureConf.aspx</DependentUpon>
@@ -110,6 +135,13 @@
     </Compile>
     <Compile Include="APaymentAdd.aspx.designer.cs">
       <DependentUpon>APaymentAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerDefault.aspx.cs">
+      <DependentUpon>CustomerDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerDefault.aspx.designer.cs">
+      <DependentUpon>CustomerDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerViewer.aspx.cs">
       <DependentUpon>CustomerViewer.aspx</DependentUpon>

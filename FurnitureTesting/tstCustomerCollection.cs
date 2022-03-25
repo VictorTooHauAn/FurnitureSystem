@@ -125,7 +125,7 @@ namespace FurnitureTesting
             //var to store the primary key
             string PrimaryKey = "";
             //set its properties
-            TestItem.CustomerUserID = "1574851";
+            TestItem.CustomerUserID = "139951";
             TestItem.Firstname = "Peter";
             TestItem.Lastname = "Lee";
             TestItem.Address = "5, London";
@@ -142,6 +142,134 @@ namespace FurnitureTesting
             AllCustomer.ThisCustomer.Find(PrimaryKey);
             //test to see that the two values are the same
             Assert.AreEqual(AllCustomer.ThisCustomer, TestItem);
+        }
+
+        //[TestMethod]
+        //public void DeleteMethodOK()
+        //{
+        //    //create an instance of the class we want to create
+        //    clsCustomerCollection AllCustomer = new clsCustomerCollection();
+        //    //create the item of test data
+        //    clsCustomer TestItem = new clsCustomer();
+        //    //var to store the primary key
+        //    string PrimaryKey = "";
+        //    //set its properties
+        //    TestItem.CustomerUserID = "1574851";
+        //    TestItem.Firstname = "Peter";
+        //    TestItem.Lastname = "Lee";
+        //    TestItem.Address = "5, London";
+        //    TestItem.EmailAddress = "peter@gmail.com";
+        //    TestItem.PhoneNumber = "+4498765432123";
+        //    TestItem.DateAdded = DateTime.Now.Date;
+        //    //set ThisCustomer to the test data
+        //    AllCustomer.ThisCustomer = TestItem;
+        //    //add the record
+        //    PrimaryKey = AllCustomer.Add();
+        //    //set the primary key of the test data
+        //    TestItem.CustomerUserID = PrimaryKey;
+        //    //find the record
+        //    AllCustomer.ThisCustomer.Find(PrimaryKey);
+        //    //delete the record
+        //    AllCustomer.Delete();
+        //    //now find the record
+        //    Boolean Found = AllCustomer.ThisCustomer.Find(PrimaryKey);
+        //    //test to see taht the record was not found
+        //    Assert.IsFalse(Found);
+        //}
+
+        //[TestMethod]
+        //public void UpdateMethodOK()
+        //{
+        //    //create an instance of the class we want to create
+        //    clsCustomerCollection AllCustomer = new clsCustomerCollection();
+        //    //create the item of test data
+        //    clsCustomer TestItem = new clsCustomer();
+        //    //var to store the primary key
+        //    string PrimaryKey = "";
+        //    //set its properties
+        //    TestItem.Firstname = "Peter";
+        //    TestItem.Lastname = "Lee";
+        //    TestItem.Address = "5, London";
+        //    TestItem.EmailAddress = "peter@gmail.com";
+        //    TestItem.PhoneNumber = "+4498765432123";
+        //    TestItem.DateAdded = DateTime.Now.Date;
+        //    //set ThisCustomer to the test data
+        //    AllCustomer.ThisCustomer = TestItem;
+        //    //add the record
+        //    PrimaryKey = AllCustomer.Add();
+        //    //set the primary key of the test data
+        //    TestItem.CustomerUserID = PrimaryKey;
+        //    //modify the test data
+        //    TestItem.Firstname = "Henry";
+        //    TestItem.Lastname = "Petel";
+        //    TestItem.Address = "30H, Highland";
+        //    TestItem.EmailAddress = "henry@yahoo.com";
+        //    TestItem.PhoneNumber = "+4412345678987";
+        //    TestItem.DateAdded = DateTime.Now.Date;
+        //    //set the record based on the new test data
+        //    AllCustomer.ThisCustomer = TestItem;
+        //    //update the record
+        //    AllCustomer.Update();
+        //    //find the record
+        //    AllCustomer.ThisCustomer.Find(PrimaryKey);
+        //    //test to see ThisAddress matches the test data
+        //    Assert.AreEqual(AllCustomer.ThisCustomer, TestItem);
+        //}
+
+
+        [TestMethod]
+        public void ReportByFirstNameMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsCustomerCollection AllCustomer = new clsCustomerCollection();
+            //create an instance of the filtered data
+            clsCustomerCollection FilteredCustomer = new clsCustomerCollection();
+            //apply a blank string (should return all records)
+            FilteredCustomer.ReportByFirstName("");
+            //test to see that the two values are the same
+            Assert.AreEqual(AllCustomer.Count, FilteredCustomer.Count);
+        }
+
+        [TestMethod]
+        public void ReportByFirstNameNoneFound()
+        {
+            //create an instance of the filtered data
+            clsCustomerCollection FilteredCustomer = new clsCustomerCollection();
+            //apply a post code that doesn't exist
+            FilteredCustomer.ReportByFirstName("xxxxx");
+            //test to see that there are no records
+            Assert.AreEqual(0, FilteredCustomer.Count);
+        }
+
+        [TestMethod]
+        public void ReportByFirstNameDataFound()
+        {
+            //create an instance of the filtered data
+            clsCustomerCollection FilteredCustomer = new clsCustomerCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a post code that doesn't exist
+            FilteredCustomer.ReportByFirstName("Alpfa");
+            //check that the correct number of records are found
+            if (FilteredCustomer.Count == 2)
+            {
+                //check that the first record CustomerID is 9999
+                if (FilteredCustomer.CustomerList[0].CustomerUserID != "9998")
+                {
+                    OK = false;
+                }
+                //check that the first record is CustomerID is 9998
+                if (FilteredCustomer.CustomerList[1].CustomerUserID != "9999")
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            //test to see that there are no records
+            Assert.IsTrue(OK);
         }
     }
 }
