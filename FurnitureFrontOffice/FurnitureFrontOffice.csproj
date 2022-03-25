@@ -74,7 +74,7 @@
     <Content Include="AFurniture.aspx" />
     <Content Include="FurnitureList.aspx" />
     <Content Include="Homepage.aspx" />
-    <Content Include="PaymentList.aspx" />
+    <Content Include="paymentlst.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -127,12 +127,12 @@
     <Compile Include="Homepage.aspx.designer.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PaymentList.aspx.cs">
-      <DependentUpon>PaymentList.aspx</DependentUpon>
+    <Compile Include="paymentlst.aspx.cs">
+      <DependentUpon>paymentlst.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PaymentList.aspx.designer.cs">
-      <DependentUpon>PaymentList.aspx</DependentUpon>
+    <Compile Include="paymentlst.aspx.designer.cs">
+      <DependentUpon>paymentlst.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
