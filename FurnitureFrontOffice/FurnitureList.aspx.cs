@@ -120,5 +120,10 @@ namespace FurnitureFrontOffice
         {
             DisplayFurniture();
         }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FurnitureHome.aspx");
+        }
     }
 }

@@ -29,6 +29,9 @@
             <asp:Button ID="btnAdd" runat="server" Style="z-index: 1;" Text="Add new" Height="26px" Width="81px" OnClick="btnAdd_Click" />
             <asp:Button ID="btnEdit" runat="server" Style="z-index: 1;" Text="Edit" Height="26px" Width="55px" OnClick="btnEdit_Click" />
             <asp:Button ID="btnDelete" runat="server" Style="z-index: 1; right: 249px" Text="Delete" Height="26px" Width="55px" OnClick="btnDelete_Click" />
+            <br />
+            <br />
+            <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
         </div>
     </form>
 </body>
