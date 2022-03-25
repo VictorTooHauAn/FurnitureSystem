@@ -7,6 +7,8 @@ namespace FurnitureTesting
     [TestClass]
     public class tstPayment
     {
+      
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -218,12 +220,23 @@ namespace FurnitureTesting
             Assert.IsTrue(OK);
         }
 
-
+        //[TestMethod]
+        //public void ValideMethodOK()
+        //{
+        //    // create an instance of the class we want to create
+        //    clsPayment APayment = new clsPayment();
+        //    // string variable to store any error message
+        //    String Error = "";
+        //    // invoke the method
+        //    Error = APayment.Valid(CustomerUserID, emailAddress, amount, dateOfPayment, typeOfPayment);
+        //    // test to see that the result is correct
+        //    Assert.AreEqual(Error, "");
+        }
 
 
 
 
     }
-}
+
 
 

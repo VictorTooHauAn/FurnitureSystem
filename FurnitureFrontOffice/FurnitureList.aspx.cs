@@ -32,5 +32,7 @@ namespace FurnitureFrontOffice
             // bind the data to the list
             lstFurniture.DataBind();
         }
+
+
     }
 }
