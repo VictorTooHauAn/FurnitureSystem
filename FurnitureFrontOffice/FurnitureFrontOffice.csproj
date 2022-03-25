@@ -68,10 +68,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ACustomer.aspx" />
+    <Content Include="AddFurnitureConf.aspx" />
     <Content Include="APayment.aspx" />
     <Content Include="APaymentAdd.aspx" />
     <Content Include="CustomerViewer.aspx" />
     <Content Include="AFurniture.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="FurnitureDelete.aspx" />
+    <Content Include="FurnitureEdit.aspx" />
+    <Content Include="FurnitureHome.aspx" />
     <Content Include="FurnitureList.aspx" />
     <Content Include="Homepage.aspx" />
     <Content Include="PaymentList.aspx" />
@@ -84,6 +89,13 @@
     </Compile>
     <Compile Include="ACustomer.aspx.designer.cs">
       <DependentUpon>ACustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddFurnitureConf.aspx.cs">
+      <DependentUpon>AddFurnitureConf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddFurnitureConf.aspx.designer.cs">
+      <DependentUpon>AddFurnitureConf.aspx</DependentUpon>
     </Compile>
     <Compile Include="APayment.aspx.cs">
       <DependentUpon>APayment.aspx</DependentUpon>
@@ -112,6 +124,34 @@
     </Compile>
     <Compile Include="AFurniture.aspx.designer.cs">
       <DependentUpon>AFurniture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FurnitureDelete.aspx.cs">
+      <DependentUpon>FurnitureDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FurnitureDelete.aspx.designer.cs">
+      <DependentUpon>FurnitureDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FurnitureEdit.aspx.cs">
+      <DependentUpon>FurnitureEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FurnitureEdit.aspx.designer.cs">
+      <DependentUpon>FurnitureEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FurnitureHome.aspx.cs">
+      <DependentUpon>FurnitureHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FurnitureHome.aspx.designer.cs">
+      <DependentUpon>FurnitureHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="FurnitureList.aspx.cs">
       <DependentUpon>FurnitureList.aspx</DependentUpon>

@@ -63,52 +63,89 @@ namespace FurnitureFrontOffice
 
         protected void btnOK_Click(object sender, EventArgs e)
         {
-            // create an instance of clsFurniture
-            clsFurniture AFurniture = new clsFurniture();
-            // capture the category
-            string Category = txtCategory.Text;
-            // capture the name
-            string Name = txtName.Text;
-            // capture the wood type
-            string WoodType = txtWoodType.Text;
-            // capture the colour
-            string Colour = txtColour.Text;
-            // capture the size
-            double Size = Convert.ToDouble(txtSize.Text);
-            // capture the stock no
-            int StockNo = Convert.ToInt32(txtStockNo.Text);
-            // capture the price
-            double Price = Convert.ToDouble(txtPrice.Text);
-            // variable to store any error messages
-            string Error = "";
-            // validate the data
-            Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
+            //// create an instance of clsFurniture
+            //clsFurniture AFurniture = new clsFurniture();
+            //// capture the category
+            //string Category = txtCategory.Text;
+            //// capture the name
+            //string Name = txtName.Text;
+            //// capture the wood type
+            //string WoodType = txtWoodType.Text;
+            //// capture the colour
+            //string Colour = txtColour.Text;
+            //// capture the size
+            //double Size = Convert.ToDouble(txtSize.Text);
+            //// capture the stock no
+            //int StockNo = Convert.ToInt32(txtStockNo.Text);
+            //// capture the price
+            //double Price = Convert.ToDouble(txtPrice.Text);
+            //// variable to store any error messages
+            //string Error = "";
+            //// validate the data
+            //Error = AFurniture.Valid(Category, Name, WoodType, Colour, Size, StockNo, Price);
+            //if (Error == "")
+            //{
+            //    // capture the category
+            //    AFurniture.Category = Category;
+            //    // capture the name
+            //    AFurniture.Name = Name;
+            //    // capture the wood type
+            //    AFurniture.WoodType = WoodType;
+            //    // capture the colour
+            //    AFurniture.Colour = Colour;
+            //    // capture the size
+            //    AFurniture.Size = Size;
+            //    // capture the stock no
+            //    AFurniture.StockNo = StockNo;
+            //    // capture the price
+            //    AFurniture.Price = Price;
+            //    // store the furniture in the session object
+            //    Session["AFurniture"] = AFurniture;
+            //    // redirect to the home page
+            //    Response.Write("");
+            //}
+            //else
+            //{
+            //    // display the error message
+            //    LabelError.Text = Error;
+            //}
+
+            // add the new record
+            Add();
+            // all done so redirect back to the main page
+            Response.Redirect("AddFurnitureConf.aspx");
+        }
+
+        // function for adding new records
+        void Add()
+        {
+            // create an instance of furniture
+            clsFurnitureCollection Furniture = new clsFurnitureCollection();
+            // validate the data on the web form
+            String Error = Furniture.ThisFurniture.Valid(txtCategory.Text, txtName.Text, txtWoodType.Text, txtColour.Text, Convert.ToDouble(txtSize.Text), Convert.ToInt32(txtStockNo.Text), Convert.ToDouble(txtPrice.Text));
+            // if the data is OK then add it to the object
             if (Error == "")
             {
-                // capture the category
-                AFurniture.Category = Category;
-                // capture the name
-                AFurniture.Name = Name;
-                // capture the wood type
-                AFurniture.WoodType = WoodType;
-                // capture the colour
-                AFurniture.Colour = Colour;
-                // capture the size
-                AFurniture.Size = Size;
-                // capture the stock no
-                AFurniture.StockNo = StockNo;
-                // capture the price
-                AFurniture.Price = Price;
-                // store the furniture in the session object
-                Session["AFurniture"] = AFurniture;
-                // redirect to the home page
-                Response.Write("");
+                Furniture.ThisFurniture.Category = txtCategory.Text;
+                Furniture.ThisFurniture.Name = txtName.Text;
+                Furniture.ThisFurniture.WoodType = txtWoodType.Text;
+                Furniture.ThisFurniture.Colour = txtColour.Text;
+                Furniture.ThisFurniture.Size = Convert.ToDouble(txtSize.Text);
+                Furniture.ThisFurniture.StockNo = Convert.ToInt32(txtStockNo.Text);
+                Furniture.ThisFurniture.Price = Convert.ToDouble(txtPrice.Text);
+                // add the record
+                Furniture.Add();
             }
             else
             {
-                // display the error message
-                LabelError.Text = Error;
+                // report the error
+                lblError.Text = "There were problems with the data entered " + Error;
             }
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FurnitureHome.aspx");
         }
     }
 }

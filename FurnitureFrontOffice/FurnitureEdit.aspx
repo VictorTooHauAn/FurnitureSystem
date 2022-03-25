@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AFurniture.aspx.cs" Inherits="FurnitureFrontOffice.findFurniture" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FurnitureEdit.aspx.cs" Inherits="FurnitureFrontOffice.FurnitureEdit" %>
 
 <!DOCTYPE html>
 
@@ -9,18 +9,7 @@
 <body style="background-color: bisque">
     <form id="form1" runat="server">
         <div>
-            <h1> Find and or add a furniture</h1>
-            <asp:Label ID="lblFurnitureId" runat="server" Text="Code" Width="100px"></asp:Label>
-            &nbsp;
-            <asp:TextBox ID="txtFrnitureId" runat="server" Width="127px"></asp:TextBox>
-            <asp:Button ID="btnFind" runat="server" Text="Find" OnClick="btnFind_Click" />
-            <br />
-            <%-- show the error if a record was not found --%>
-            <% if (lblError.Visible == true)
-                {%>
-            <asp:Label ID="lblError" runat="server" Text="Error" ForeColor="Red"></asp:Label>
-            <br />
-            <%} %>
+            <h2> Edit a furniture's details </h2>
             <asp:Label ID="lblCategory" runat="server" Text="Category" Width="100px"></asp:Label>
             &nbsp;
             <asp:TextBox ID="txtCategory" runat="server" Width="127px"></asp:TextBox>
@@ -52,11 +41,9 @@
             <asp:Label ID="LabelError" runat="server" ForeColor="Red"></asp:Label>
             <br />
             <br />
-            <asp:Button ID="btnOK" runat="server" Height="26px" Text="Add" Width="61px" OnClick="btnOK_Click" />
-            &nbsp;
-            &nbsp;
-            <asp:Button ID="btnCancel" runat="server" Style="z-index: 1;" Text="Cancel" Height="26px" Width="61px" OnClick="btnCancel_Click"  />
-        
+            <asp:Button ID="btnEdit" runat="server" Height="26px" Text="Edit" Width="61px" OnClick="btnEdit_Click" style="margin-bottom: 0px" />
+            <asp:Button ID="btnCancel" runat="server" Style="z-index: 1;" Text="Cancel" Height="26px" Width="61px" OnClick="btnCancel_Click" />
+
         </div>
     </form>
 </body>
