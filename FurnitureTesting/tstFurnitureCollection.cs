@@ -91,5 +91,163 @@ namespace FurnitureTesting
             // test to see that the two values are the same
             Assert.AreEqual(AllFurniture.Count, TestList.Count);
         }
+
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsFurnitureCollection AllFurniture = new clsFurnitureCollection();
+            // create the item of test data
+            clsFurniture TestItem = new clsFurniture();
+            // var to store the primaery key
+            Int32 PrimaryKey = 0;
+            // set its properties
+            TestItem.FurnitureId = 2;
+            TestItem.Category = "Lounge";
+            TestItem.Name = "chair";
+            TestItem.WoodType = "birchwood";
+            TestItem.Colour = "red";
+            TestItem.Size = 43.40;
+            TestItem.StockNo = 53;
+            TestItem.Price = 83.32;
+            // set ThisFurniture to the test data
+            AllFurniture.ThisFurniture = TestItem;
+            // add the record
+            PrimaryKey = AllFurniture.Add();
+            // set the primary key of the test data
+            TestItem.FurnitureId = PrimaryKey;
+            // find the record
+            AllFurniture.ThisFurniture.Find(PrimaryKey);
+            // test to see that the two values are the same
+            Assert.AreEqual(AllFurniture.ThisFurniture, TestItem);
+        }
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            // create an instance of the class we want to create
+            clsFurnitureCollection AllFurniture = new clsFurnitureCollection();
+            // create the item of test data
+            clsFurniture TestItem = new clsFurniture();
+            // var to store the primary key
+            Int32 PrimaryKey = 0;
+            // set its properties
+            //TestItem.FurnitureId = 2;
+            TestItem.Category = "Lounge";
+            TestItem.Name = "chair";
+            TestItem.WoodType = "birchwood";
+            TestItem.Colour = "red";
+            TestItem.Size = 43.40;
+            TestItem.StockNo = 53;
+            TestItem.Price = 83.32;
+            // set ThisFurniture to the test data
+            AllFurniture.ThisFurniture = TestItem;
+            // add the record
+            PrimaryKey = AllFurniture.Add();
+            // set the primary key of the test data
+            TestItem.FurnitureId = PrimaryKey;
+            // find the record
+            AllFurniture.ThisFurniture.Find(PrimaryKey);
+            // delete the record
+            AllFurniture.Delete();
+            // now find the record
+            Boolean Found = AllFurniture.ThisFurniture.Find(PrimaryKey);
+            // test to see that the record was not found
+            Assert.IsFalse(Found);
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            // create an instance of the class want to create
+            clsFurnitureCollection AllFurniture = new clsFurnitureCollection();
+            // create the item of test data
+            clsFurniture TestItem = new clsFurniture();
+            // var to store the primary key
+            Int32 PrimaryKey = 0;
+            // set its properties
+            TestItem.Category = "Lounge";
+            TestItem.Name = "chair";
+            TestItem.WoodType = "birchwood";
+            TestItem.Colour = "red";
+            TestItem.Size = 43.40;
+            TestItem.StockNo = 53;
+            TestItem.Price = 83.32;
+            // set ThisFurniture to the test data
+            AllFurniture.ThisFurniture = TestItem;
+            // add the record
+            PrimaryKey = AllFurniture.Add();
+            // set the primary key of the test data
+            TestItem.Category = "Kitchen";
+            TestItem.Name = "table";
+            TestItem.WoodType = "cider";
+            TestItem.Colour = "white";
+            TestItem.Size = 32.43;
+            TestItem.StockNo = 32;
+            TestItem.Price = 21.76;
+            // set the record based on the new test data
+            AllFurniture.ThisFurniture = TestItem;
+            // update the record
+            AllFurniture.Update();
+            // find the record
+            AllFurniture.ThisFurniture.Find(PrimaryKey);
+            // test to see ThisFurniture matches the test data
+            Assert.AreEqual(AllFurniture.ThisFurniture, TestItem);
+        }
+
+        [TestMethod]
+        public void ReportByCategory()
+        {
+            // create an instance of the class containing unfiltered results
+            clsFurnitureCollection AllFurniture = new clsFurnitureCollection();
+            // create an instance of the filtered data
+            clsFurnitureCollection FilteredFurintures = new clsFurnitureCollection();
+            // apply a blank string (should return all records)
+            FilteredFurintures.ReportByCategory("");
+            // test to see that the two values are the same
+            Assert.AreEqual(AllFurniture.Count, FilteredFurintures.Count);
+        }
+
+        [TestMethod]
+        public void ReportByCategoryNoneFound()
+        {
+            // create the instance of the filtered data
+            clsFurnitureCollection FilteredCategories = new clsFurnitureCollection();
+            // apply a category that doesn't exist
+            FilteredCategories.ReportByCategory("xxx xxx");
+            // test to see that there are no records
+            Assert.AreEqual(0, FilteredCategories.Count);
+        }
+
+        [TestMethod]
+        public void ReportByCategoryTestDataFound()
+        {
+            // create an instance of the filtered data
+            clsFurnitureCollection FilteredCategories = new clsFurnitureCollection();
+            // var to store outcome
+            Boolean OK = true;
+            // apply a category that exists
+            FilteredCategories.ReportByCategory("Outdoors");
+            // check that the coorect number of records are found
+            if (FilteredCategories.Count == 2)
+            {
+                // check that the first record is ID 36
+                if (FilteredCategories.FurnitureList[0].FurnitureId != 44)
+                {
+                    OK = false;
+                }
+                // check that the first record is ID 37
+                if (FilteredCategories.FurnitureList[1].FurnitureId != 45)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            // test to see that there are no records
+            Assert.IsTrue(OK);
+        }
     }
 }

@@ -232,6 +232,12 @@ namespace FurnitureClasses
                 // record the error
                 Error = Error + "The colour may not be less than 15 characters";
             }
+            // if size is invalid data
+            if (Convert.ToString(size).Length == 0)
+            {
+                // record the error
+                Error = Error + "The size must be a figure";
+            }
             // if the size is less than 0
             if (size < 0)
             {
