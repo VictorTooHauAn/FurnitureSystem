@@ -47,5 +47,10 @@ namespace FurnitureFrontOffice
             //all done so redirect back to the main page
             Response.Redirect("CustomerDefault.aspx");
         }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CustomerDefault.aspx");
+        }
     }
 }

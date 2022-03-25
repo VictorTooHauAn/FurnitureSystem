@@ -5,10 +5,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<body>
+<body style="background-color: bisque">
     <form id="form1" runat="server">
         <div>
+            <span class="auto-style1"><strong>Update Customer</strong></span><br />
             Customer User ID:<asp:TextBox ID="txtCustomerUserID" runat="server" Width="158px"></asp:TextBox>
             <br />
             First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -32,7 +38,7 @@
             <asp:Label ID="lblError" runat="server"></asp:Label>
             <br />
             <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Text="OK" Width="106px" />
-            <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
+            <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
         </div>
     </form>
 </body>

@@ -82,5 +82,15 @@ namespace FurnitureFrontOffice
                 lblError.Text = "Please select a record to delete from the list";
             }
         }
+
+        protected void btnFind_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ACustomer.aspx");
+        }
+
+        protected void btnHomepage_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
+        }
     }
 }
