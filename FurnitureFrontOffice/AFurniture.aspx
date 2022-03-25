@@ -52,7 +52,7 @@
             <br />
             <br />
             <asp:Button ID="btnOK" runat="server" Height="26px" Text="OK" Width="61px" OnClick="btnOK_Click" />
-            <asp:Button ID="btnCancel" runat="server" Style="z-index: 1;" Text="Cancel" Height="26px" Width="61px"  />
+            <asp:Button ID="btnCancel" runat="server" Style="z-index: 1;" Text="Cancel" Height="26px" Width="61px" OnClick="btnCancel_Click"  />
         
         </div>
     </form>

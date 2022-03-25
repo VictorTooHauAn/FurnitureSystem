@@ -93,5 +93,32 @@ namespace FurnitureFrontOffice
                 lblError.Text = "Please select a record to edit from the list";
             }
         }
+
+        protected void btnApply_Click(object sender, EventArgs e)
+        {
+            // show the filtered categories in the list box
+            DisplayFilteredCategories();
+        }
+
+        void DisplayFilteredCategories()
+        {
+            // create an instance of the furniture collection
+            clsFurnitureCollection FilteredCategories = new clsFurnitureCollection();
+            // apply a category
+            FilteredCategories.ReportByCategory(txtName.Text);
+            // set the data source to the list of furniture in the collection
+            lstFurniture.DataSource = FilteredCategories.FurnitureList;
+            // set the name of the primary key
+            lstFurniture.DataValueField = "FurnitureId";
+            // set the data field to display
+            lstFurniture.DataTextField = "Name";
+            // bind the data to the list
+            lstFurniture.DataBind();
+        }
+
+        protected void btnDisplayAll_Click(object sender, EventArgs e)
+        {
+            DisplayFurniture();
+        }
     }
 }

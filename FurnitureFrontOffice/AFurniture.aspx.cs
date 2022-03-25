@@ -142,5 +142,10 @@ namespace FurnitureFrontOffice
                 lblError.Text = "There were problems with the data entered " + Error;
             }
         }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FurnitureHome.aspx");
+        }
     }
 }

@@ -20,8 +20,8 @@
             <asp:TextBox ID="txtName" runat="server" Style="z-index: 1; width: 169px"></asp:TextBox>
             <br />
             <br />
-            <asp:Button ID="btnApply" runat="server" Style="z-index: 1; width: 119px" Text="Apply" />
-            <asp:Button ID="btnDisplayAll" runat="server" Height="26px" Style="z-index: 1; width: 119px" Text="Display All" />
+            <asp:Button ID="btnApply" runat="server" Style="z-index: 1; width: 119px" Text="Apply" OnClick="btnApply_Click" />
+            <asp:Button ID="btnDisplayAll" runat="server" Height="26px" Style="z-index: 1; width: 119px" Text="Display All" OnClick="btnDisplayAll_Click" />
             <br />
             <br />
             <asp:Button ID="btnAdd" runat="server" Style="z-index: 1;" Text="Add" Height="26px" Width="55px" OnClick="btnAdd_Click" />

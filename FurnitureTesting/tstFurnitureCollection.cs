@@ -226,7 +226,7 @@ namespace FurnitureTesting
             clsFurnitureCollection FilteredCategories = new clsFurnitureCollection();
             // var to store outcome
             Boolean OK = true;
-            // apply a category that doesn't exist
+            // apply a category that exists
             FilteredCategories.ReportByCategory("Outdoors");
             // check that the coorect number of records are found
             if (FilteredCategories.Count == 2)
