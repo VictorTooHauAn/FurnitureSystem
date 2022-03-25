@@ -107,6 +107,19 @@ namespace FurnitureClasses
             DB.Execute("sproc_Customer_Delete");
         }
 
+        public void ReportByFirstName(string FirstName)
+        {
+            //filters the records based on a full or partial post code
+            //connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            //send the FirstName parameter to the database
+            DB.AddParameter("@FirstName", FirstName);
+            //execute the stored procedure
+            DB.Execute("sproc_Customer_FilterByFirstName");
+            //populate the array list with the data table
+            PopulateArray(DB);
+        }
+
         //public void Update()
         //{
         //    //update an existing record based on the values of ThisCustomer

@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using FurnitureTesting;
 
 namespace FurnitureTesting
 {
@@ -125,7 +126,7 @@ namespace FurnitureTesting
             //var to store the primary key
             string PrimaryKey = "";
             //set its properties
-            TestItem.CustomerUserID = "139951";
+            TestItem.CustomerUserID = "13668";
             TestItem.Firstname = "Peter";
             TestItem.Lastname = "Lee";
             TestItem.Address = "5, London";
