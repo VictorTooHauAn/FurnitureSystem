@@ -187,6 +187,7 @@ namespace FurnitureTesting
             Boolean Found = false;
             //boolean varaible to record if data is ok(assume it is)
             Boolean OK = true;
+
             //create some test data to use
             string CustomerUserID = "123";
             //invoker the method

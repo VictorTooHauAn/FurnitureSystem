@@ -69,6 +69,8 @@
   <ItemGroup>
     <Content Include="ACustomer.aspx" />
     <Content Include="AddFurnitureConf.aspx" />
+    <Content Include="APayment.aspx" />
+    <Content Include="APaymentAdd.aspx" />
     <Content Include="CustomerViewer.aspx" />
     <Content Include="AFurniture.aspx" />
     <Content Include="Default.aspx" />
@@ -77,6 +79,7 @@
     <Content Include="FurnitureHome.aspx" />
     <Content Include="FurnitureList.aspx" />
     <Content Include="Homepage.aspx" />
+    <Content Include="PaymentList.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +96,20 @@
     </Compile>
     <Compile Include="AddFurnitureConf.aspx.designer.cs">
       <DependentUpon>AddFurnitureConf.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APayment.aspx.cs">
+      <DependentUpon>APayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APayment.aspx.designer.cs">
+      <DependentUpon>APayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="APaymentAdd.aspx.cs">
+      <DependentUpon>APaymentAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="APaymentAdd.aspx.designer.cs">
+      <DependentUpon>APaymentAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerViewer.aspx.cs">
       <DependentUpon>CustomerViewer.aspx</DependentUpon>
@@ -150,6 +167,13 @@
     <Compile Include="Homepage.aspx.designer.cs">
       <DependentUpon>Homepage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PaymentList.aspx.cs">
+      <DependentUpon>PaymentList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaymentList.aspx.designer.cs">
+      <DependentUpon>PaymentList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -163,7 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FurnitureClasses\FurnitureClasses.csproj">
-      <Project>{21ecb81c-ee8b-4bc1-94df-f20676dad60f}</Project>
+      <Project>{21ECB81C-EE8B-4BC1-94DF-F20676DAD60F}</Project>
       <Name>FurnitureClasses</Name>
     </ProjectReference>
   </ItemGroup>

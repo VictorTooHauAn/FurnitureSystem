@@ -54,13 +54,15 @@
     <Compile Include="tstCustomerCollection.cs" />
     <Compile Include="tstFurniture.cs" />
     <Compile Include="tstFurnitureCollection.cs" />
+    <Compile Include="tstPayment.cs" />
+    <Compile Include="tstPaymentCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FurnitureClasses\FurnitureClasses.csproj">
-      <Project>{21ECB81C-EE8B-4BC1-94DF-F20676DAD60F}</Project>
+      <Project>{21ecb81c-ee8b-4bc1-94df-f20676dad60f}</Project>
       <Name>FurnitureClasses</Name>
     </ProjectReference>
   </ItemGroup>
