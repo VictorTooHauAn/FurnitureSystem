@@ -27,7 +27,7 @@ namespace FurnitureClasses
             }
         }
 
-     
+        
 
         public string CustomerUserID
         {
@@ -85,11 +85,8 @@ namespace FurnitureClasses
                 mDateOfPayment = value;
             }
         }
-        
-        public string Valid(string paymentID, string customerUserID, string amount, string dateOfPayment, string typeOfPayment)
-        {
-            return  "";
-        }
+
+      
 
         public string TypeOfPayment
         {
@@ -136,5 +133,72 @@ namespace FurnitureClasses
         }
 
        
+
+
+        public string Valid(string customerUserID, string emailAddress, string amount, string dateOfPayment, string typeOfPayment)
+        {
+            //create a string variable to store the error
+            string Error = "";
+            //create a temporary variable to store date values
+            DateTime DateTemp;
+            //if theEmail ID is blank
+            if (EmailAddress.Length == 0)
+            {
+                //record the error
+                Error = Error + "The Email ID may not be blank : ";
+            }
+            //if the Email is greater than 50 characters
+            if (EmailAddress.Length > 50)
+            {
+                //record the error
+                Error = Error + "The First Name must be less than 15 characters : ";
+            }
+            ////if the LastName is blank
+            //if (Amount.Length == 0)
+            //{
+            //    //record the error
+            //    Error = Error + "The Amount may not be blank : ";
+            //}
+            ////if the amount is greater than 8 characters
+            //if (Amount.Length > 8)
+            //{
+            //    //record the error
+            //    Error = Error + "The Last Name must be less than 15 characters : ";
+            //}
+            //if the TypeOfPayment is blank
+            if (TypeOfPayment.Length == 0)
+            {
+                //record the error
+                Error = Error + "The TypeOfPayment may not be blank : ";
+            }
+            //if the TypeOfPayment is greater than 25 characters
+           
+            //if the PhoneNumber is greater than 20 characters
+            
+            try
+            {
+                //copy the dateOfBirth value to the DateTemp variable
+                DateTemp = Convert.ToDateTime(DateOfPayment);
+                //if (DateTemp < DateTime.Now.Date)
+                //{
+                //    //record the error
+                //    Error = Error + "The date cannot be in the past : ";
+                //}
+                //check to see if the data is greater than today date
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    //record the error
+                    Error = Error + "The data cannot be in the future";
+                }
+            }
+            catch
+            {
+                //record the error
+                Error = Error + "The data was not a valid date";
+            }
+            //return any error message
+            return Error;
+        }
+
     }
 }

@@ -16,9 +16,12 @@
     <form id="form1" runat="server">
         <div class="auto-style1">
         &nbsp;&nbsp;&nbsp;
-            <asp:ListBox ID="ListBox1" runat="server" DataSourceID="SqlDataSource1" DataTextField="PaymentID" DataValueField="PaymentID" Height="211px" Width="306px"></asp:ListBox>
-&nbsp;
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:p2622897ConnectionString2 %>" SelectCommand="SELECT [PaymentID], [CustomerUserID], [EmailAddress], [Amount], [DateOfPayment], [TypeOfPayment] FROM [tblPayment]"></asp:SqlDataSource>
+            &nbsp;
+            <br />
+            <asp:ListBox ID="ListBox1" runat="server" Height="164px" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged" Width="210px"></asp:ListBox>
+            <br />
+            <br />
+            <br />
 &nbsp;
             <asp:Label ID="Label1" runat="server" Text="Please Enter Payment No."></asp:Label>
             <br />

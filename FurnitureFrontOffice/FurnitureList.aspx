@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:ListBox ID="lstFurniture" runat="server" Style="z-index: 1; height: 197px; width: 327px"></asp:ListBox>
+            <asp:ListBox ID="lstFurniture" runat="server" Style="z-index: 1; height: 197px; width: 327px" OnSelectedIndexChanged="lstFurniture_SelectedIndexChanged1"></asp:ListBox>
             <br />
             <asp:Label ID="lblError" runat="server" Style="z-index: 1; width: 393px"></asp:Label>
 
