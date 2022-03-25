@@ -85,7 +85,7 @@ namespace FurnitureClasses
                 mDateOfPayment = value;
             }
         }
-
+        
         public string Valid(string paymentID, string customerUserID, string amount, string dateOfPayment, string typeOfPayment)
         {
             return  "";

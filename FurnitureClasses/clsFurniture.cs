@@ -218,55 +218,55 @@ namespace FurnitureClasses
             if (woodType.Length > 15)
             {
                 // record the error
-                Error = Error + "The name may not be less than 15 characters";
+                Error = Error + "The wood type may not be less than 15 characters";
             }
             // if the colour is blank
             if (colour.Length == 0)
             {
                 // record the error
-                Error = Error + "The name may not be less than 15 characters";
+                Error = Error + "The colour may not be blank";
             }
             // if the colour is greater than 15
             if (colour.Length > 15)
             {
                 // record the error
-                Error = Error + "The name may not be less than 15 characters";
+                Error = Error + "The colour may not be less than 15 characters";
             }
             // if the size is less than 0
             if (size < 0)
             {
                 // record the error
-                Error = Error + "The name may not be less than 15 characters";
+                Error = Error + "The size may not be less than 0";
             }
             // if the size is greater than 
             if (size > 50)
             {
                 // record the error
-                Error = Error + "The name may not be less than 15 characters";
+                Error = Error + "The size may not be greater than 50";
             }
             // if the stock no is less than 1
             if (stockNo < 1)
             {
                 // record the error
-                Error = Error + "The name may not be less than 15 characters";
+                Error = Error + "The stock nunmber may not be less than 1";
             }
             // if the stock no is greater than 200
             if (stockNo > 200)
             {
                 // record the error
-                Error = Error + "The name may not be less than 15 characters";
+                Error = Error + "The stock number may not be gretaer than 200";
             }
             // if the stock no is less than 0
             if (price < 0)
             {
                 // record the error
-                Error = Error + "The name may not be less than 15 characters";
+                Error = Error + "The price may not be less than 0";
             }
             // if the stock no is greater than 3000001.00
             if (price > 3000000.00)
             {
                 // record the error
-                Error = Error + "The name may not be less than 15 characters";
+                Error = Error + "The price may not be greater than 3,000,000";
             }
 
             // return any error message

@@ -71,7 +71,19 @@ namespace FurnitureTesting
         }
 
 
- 
+        //[TestMethod]
+        //public void AddressPropertyOK()
+        //{
+        //    //Create an instance of class
+        //    clsCustomer ACustomer = new clsCustomer();
+        //    //Create some test data to assign to the property
+        //    string TestData = "23, London Street";
+        //    //assign the data to the property
+        //    ACustomer.Address = TestData;
+        //    //test to see that it exists
+        //    Assert.AreEqual(ACustomer.Address, TestData);
+        //}
+
         [TestMethod]
         public void TypeOfPaymentPropertyOK()
         {
