@@ -11,7 +11,7 @@ namespace FurnitureFrontOffice
 {
 
 
-    public partial class FurnitureHome
+    public partial class Default
     {
 
         /// <summary>
@@ -24,30 +24,21 @@ namespace FurnitureFrontOffice
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// btnDefault control.
+        /// btnCustomerSection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDefault;
+        protected global::System.Web.UI.WebControls.Button btnCustomerSection;
 
         /// <summary>
-        /// btnFind control.
+        /// btnFurnitureSection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFind;
-
-        /// <summary>
-        /// btnAlter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAlter;
+        protected global::System.Web.UI.WebControls.Button btnFurnitureSection;
     }
 }

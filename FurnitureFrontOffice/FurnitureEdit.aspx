@@ -6,9 +6,10 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body style="background-color: bisque">
     <form id="form1" runat="server">
         <div>
+            <h2> Edit a furniture's details </h2>
             <asp:Label ID="lblCategory" runat="server" Text="Category" Width="100px"></asp:Label>
             &nbsp;
             <asp:TextBox ID="txtCategory" runat="server" Width="127px"></asp:TextBox>

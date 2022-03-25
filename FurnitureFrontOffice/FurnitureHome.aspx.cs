@@ -23,5 +23,10 @@ namespace FurnitureFrontOffice
         {
             Response.Redirect("FurnitureList.aspx");
         }
+
+        protected void btnDefault_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
+        }
     }
 }

@@ -6,9 +6,10 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body style="background-color: bisque">
     <form id="form1" runat="server">
         <div>
+            <h1> Find and or add a furniture</h1>
             <asp:Label ID="lblFurnitureId" runat="server" Text="Code" Width="100px"></asp:Label>
             &nbsp;
             <asp:TextBox ID="txtFrnitureId" runat="server" Width="127px"></asp:TextBox>
@@ -51,7 +52,9 @@
             <asp:Label ID="LabelError" runat="server" ForeColor="Red"></asp:Label>
             <br />
             <br />
-            <asp:Button ID="btnOK" runat="server" Height="26px" Text="OK" Width="61px" OnClick="btnOK_Click" />
+            <asp:Button ID="btnOK" runat="server" Height="26px" Text="Add" Width="61px" OnClick="btnOK_Click" />
+            &nbsp;
+            &nbsp;
             <asp:Button ID="btnCancel" runat="server" Style="z-index: 1;" Text="Cancel" Height="26px" Width="61px" OnClick="btnCancel_Click"  />
         
         </div>

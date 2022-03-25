@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body style="background-color: bisque">
     <form id="form1" runat="server">
         <div>
             <p> Are you sure you want to delete this furniture?</p>
