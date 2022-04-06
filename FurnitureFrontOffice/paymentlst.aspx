@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PaymentList.aspx.cs" Inherits="FurnitureFrontOffice.PaymentList" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="paymentlst.aspx.cs" Inherits="FurnitureFrontOffice.paymentlst" %>
 
 <!DOCTYPE html>
 
@@ -18,7 +18,8 @@
         &nbsp;&nbsp;&nbsp;
             &nbsp;
             <br />
-            <asp:ListBox ID="ListBox1" runat="server" Height="164px" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged" Width="210px"></asp:ListBox>
+            <asp:ListBox ID="ListBox1" runat="server" DataSourceID="SqlDataSource1" DataTextField="EmailAddress" DataValueField="EmailAddress" Height="259px" Width="394px"></asp:ListBox>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:p2622897ConnectionString4 %>" SelectCommand="SELECT [EmailAddress] FROM [tblPayment]"></asp:SqlDataSource>
             <br />
             <br />
             <br />

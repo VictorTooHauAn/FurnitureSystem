@@ -75,5 +75,10 @@ namespace FurnitureFrontOffice
                 txtPhoneNumber.Text = ACustomer.PhoneNumber;
             }
         }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CustomerDefault.aspx");
+        }
     }
 }

@@ -33,20 +33,64 @@ namespace FurnitureFrontOffice
             }
         }
 
-        //protected void btnAdd_Click(object sender, EventArgs e)
-        //{
-        //    //store -1 into the seesion object to indicate this is a new rcord
-        //    Session["CustomerUserId"] = -1;
-        //    //redirect to the data entry page
-        //    Response.Redirect("ACustomerAdd.aspx");
-        //}
+        protected void btnAdd_Click1(object sender, EventArgs e)
+        {
+            //store -1 into the seesion object to indicate this is a new rcord
+            Session["CustomerUserId"] = -1;
+            //redirect to the data entry page
+            Response.Redirect("ACustomerAdd.aspx");
+        }
 
-        protected void btnAdd_Click1(object sender, EventArgs e)      
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            //var to store the primary key value of the record to be delete
+            string CustomerUserID;
+            //if a record has been selected from the list
+            if (lstCustomer.SelectedIndex != -1)
             {
-                //store -1 into the seesion object to indicate this is a new rcord
-                Session["CustomerUserId"] = -1;
-                //redirect to the data entry page
-                Response.Redirect("ACustomerAdd.aspx");
-            }       
+                //get the primary key value of the record to delete
+                CustomerUserID = Convert.ToString(lstCustomer.SelectedValue);
+                //store the data in the session object
+                Session["CustomerUserID"] = CustomerUserID;
+                //redirect to the delete page
+                Response.Redirect("ACustomerDelete.aspx");
+            }
+            else //if no record has been selected
+            {
+                //display an error
+                lblError.Text = "Please select a record to delete from the list";
+            }
+        }
+
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            //var to store the primary key value of the record to be edited
+            string CustomerUserID;
+            //if a record has been selected from the list
+            if (lstCustomer.SelectedIndex != -1)
+            {
+                //get the primary key value of the record to edit
+                CustomerUserID = Convert.ToString(lstCustomer.SelectedValue);
+                //store the data in the session object
+                Session["CustomerUserID"] = CustomerUserID;
+                //redirect to the edit page
+                Response.Redirect("ACustomerUpdate.aspx");
+            }
+            else //if no record has been selected
+            {
+                //diaplay eroor
+                lblError.Text = "Please select a record to delete from the list";
+            }
+        }
+
+        protected void btnFind_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ACustomer.aspx");
+        }
+
+        protected void btnHomepage_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
+        }
     }
 }
