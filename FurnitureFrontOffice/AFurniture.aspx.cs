@@ -113,7 +113,7 @@ namespace FurnitureFrontOffice
             // add the new record
             Add();
             // all done so redirect back to the main page
-            Response.Redirect("AddFurnitureConf.aspx");
+            //Response.Redirect("AddFurnitureConf.aspx");
         }
 
         // function for adding new records
@@ -135,11 +135,13 @@ namespace FurnitureFrontOffice
                 Furniture.ThisFurniture.Price = Convert.ToDouble(txtPrice.Text);
                 // add the record
                 Furniture.Add();
+                // all done so redirect back to the main page
+                Response.Redirect("AddFurnitureConf.aspx");
             }
             else
             {
                 // report the error
-                lblError.Text = "There were problems with the data entered " + Error;
+                LabelError.Text = "There were problems with the data entered " + Error;
             }
         }
 
